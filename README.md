@@ -1,8 +1,13 @@
-# React + Vite
+# TODO:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## What to implement:
 
-Currently, two official plugins are available:
+- Contact Form
+- Best Projects
+- Social Media
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Remember about:
+
+- Custom scrollbar (even that it will not work on firefox)
+- Google Analytics to improve UX
+- React Router for (Contact, Subpages of projects (so that even when livelink will not work, it will be possible to see what is it all about))
