@@ -4,7 +4,6 @@ import { savedLanguage } from "./i18n";
 import useTheme from "./useTheme";
 import useSound from "./useSound";
 import initialSoundWav from "./assets/sounds/initial.mp3";
-
 import Button from "./components/Button";
 
 function App() {
@@ -21,16 +20,14 @@ function App() {
 
   return (
     <>
-      <div className="flex gap-5 bg-red-300 dark:bg-slate-500 w-fit [&>*]:border">
+      <div>
         <Button
           playSound={playSound}
           onClick={() => changeLanguage(language === "pl" ? "en" : "pl")}
         >
           {t("TranslationButton")}
         </Button>
-      </div>
 
-      <div className="flex gap-5 bg-red-300 dark:bg-slate-500 w-fit [&>*]:border">
         <Button
           playSound={playSound}
           onClick={() => {
@@ -39,9 +36,7 @@ function App() {
         >
           Change to {theme === "dark" ? "light" : "dark"}
         </Button>
-      </div>
 
-      <div className="flex gap-5 bg-red-300 dark:bg-slate-500 w-fit [&>*]:border">
         <Button
           onClick={() => {
             toggleSound();
