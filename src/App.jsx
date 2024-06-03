@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="flex flex-col gap-5 w-fit">
         <Button
           playSound={playSound}
           onClick={() => changeLanguage(language === "pl" ? "en" : "pl")}
@@ -49,7 +49,6 @@ function App() {
 
       <h1 className="">{t("Welcome")}</h1>
       <h2>{t("Description")}</h2>
-      <Button playSound={playSound}>test</Button>
     </>
   );
 }
