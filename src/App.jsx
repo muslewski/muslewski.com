@@ -1,54 +1,35 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { savedLanguage } from "./i18n";
-import useTheme from "./useTheme";
-import useSound from "./useSound";
-import initialSoundWav from "./assets/sounds/initial.mp3";
-import Button from "./components/Button";
+import Settings from "./components/settings/Settings";
+import Wrapper from "./components/Wrapper";
+import WelcomeSection from "./components/WelcomeSection";
+
+import developmentGif from "./assets/development.gif";
 
 function App() {
-  const [language, setLanguage] = useState(savedLanguage);
   const { t, i18n } = useTranslation();
-  const [theme, setTheme] = useTheme();
-  const { soundEnabled, toggleSound, playSound, initialSound } = useSound();
-
-  function changeLanguage(lng) {
-    setLanguage(lng);
-    i18n.changeLanguage(lng);
-    localStorage.setItem("language", lng); // Zapisz wybór języka
-  }
 
   return (
     <>
-      <div className="flex flex-col gap-5 w-fit">
-        <Button
-          playSound={playSound}
-          onClick={() => changeLanguage(language === "pl" ? "en" : "pl")}
-        >
-          {t("TranslationButton")}
-        </Button>
+      <Wrapper />
+      {/* <Settings /> */}
+      <WelcomeSection />
 
-        <Button
-          playSound={playSound}
-          onClick={() => {
-            setTheme(theme === "dark" ? "light" : "dark");
-          }}
-        >
-          Change to {theme === "dark" ? "light" : "dark"}
-        </Button>
+      <section className="overflow-hidden mx-10 p-1 flex flex-col items-center">
+        <h2 className="flex justify-center gap-0 items-center font-title text-4xl mt-24">
+          <span className="w-52 text-secondary">Full Stack Developer</span>
+          <img className="h-28" src={developmentGif} alt="" />
+        </h2>
+        <p className="font-description text-xl mt-10 leading-normal">
+          Uwielbiam tworzyć nowoczesne strony i aplikacje internetowe.
+          <hr className="opacity-0 py-1.5" />
+          <b className="font-semibold">Im trudniejszy projekt, tym lepiej!</b>
+          <hr className="opacity-0 py-1.5" />
+          Współpracując ze mną, zyskasz technicznego eksperta i partnera, który
+          z pasją przekształca Twoje pomysły w rzeczywistość.
+        </p>
+      </section>
 
-        <Button
-          onClick={() => {
-            toggleSound();
-            if (soundEnabled != "on") initialSound(initialSoundWav);
-          }}
-        >
-          {soundEnabled === "on" ? "Disable Sound" : "Enable Sound"}
-        </Button>
-      </div>
-
-      <h1 className="">{t("Welcome")}</h1>
-      <h2>{t("Description")}</h2>
+      <hr className="opacity-0 pb-44" />
     </>
   );
 }
