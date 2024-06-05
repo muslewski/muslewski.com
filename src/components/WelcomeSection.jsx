@@ -15,12 +15,16 @@ function WelcomeSection() {
           <img className="fixed right-11" src={hamburger} alt="" />
         </li>
       </menu>
-      <img className="h-80" src={fota} alt="" />
+      <img className="h-80 " src={fota} alt="" />
       <h1 className="font-title text-secondary text-4xl text-center mt-8 leading-normal">
         Cześć, jestem <b className="font-medium">Mateusz</b>.
       </h1>
 
-      <img className="mt-11 animate-pulse" src={arrow} alt="" />
+      <img
+        className="mt-11 animate-pulse hover:scale-110 transition-transform"
+        src={arrow}
+        alt=""
+      />
     </section>
   );
 }

@@ -1,0 +1,48 @@
+.top-2-99 {
+  top: 0.73rem;
+}
+
+.bottom-2-99 {
+  bottom: 0.73rem;
+}
+
+.animate-fade-top-left {
+  animation: animate-fade-top-left 1.4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-fade-top-left {
+  0% {
+    scale: 0;
+    opacity: 0;
+    top: -45px;
+    left: -45px;
+    transform: translate(-100px, -100px);
+  }
+
+  100% {
+    scale: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+.animate-fade-bottom-right {
+  animation: animate-fade-bottom-right 1.4s ease-in-out;
+  animation-fill-mode: forwards;
+  rotate: 180deg;
+}
+
+@keyframes animate-fade-bottom-right {
+  0% {
+    scale: 0;
+    opacity: 0;
+    bottom: -45px;
+    right: -45px;
+    transform: translate(-100px, -100px);
+  }
+
+  100% {
+    scale: 1;
+    transform: translate(0px, 0px);
+  }
+}
