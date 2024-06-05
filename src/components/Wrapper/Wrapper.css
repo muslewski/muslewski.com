@@ -9,6 +9,9 @@
 .animate-fade-top-left {
   animation: animate-fade-top-left 1.4s ease-in-out;
   animation-fill-mode: forwards;
+  -webkit-box-shadow: -8px -8px 0px 0px rgba(13, 0, 91, 1);
+  -moz-box-shadow: -8px -8px 0px 0px rgba(13, 0, 91, 1);
+  box-shadow: -8px -8px 0px 0px rgba(13, 0, 91, 1);
 }
 
 @keyframes animate-fade-top-left {
@@ -30,6 +33,9 @@
   animation: animate-fade-bottom-right 1.4s ease-in-out;
   animation-fill-mode: forwards;
   rotate: 180deg;
+  -webkit-box-shadow: -8px -8px 0px 0px rgba(13, 0, 91, 1);
+  -moz-box-shadow: -8px -8px 0px 0px rgba(13, 0, 91, 1);
+  box-shadow: -8px -8px 0px 0px rgba(13, 0, 91, 1);
 }
 
 @keyframes animate-fade-bottom-right {
