@@ -13,7 +13,7 @@ i18n
     fallbackLng: "pl",
     lng: savedLanguage,
     backend: {
-      loadPath: "/muslewski/locales/{{lng}}/translation.json", //! Do zmiany /muslewski
+      loadPath: "/locales/{{lng}}/translation.json", //! Do zmiany /muslewski
     },
     interpolation: {
       escapeValue: false,
