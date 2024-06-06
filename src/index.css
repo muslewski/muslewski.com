@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blob-border-radius {
+  border-radius: 30% 70% 62% 38% / 30% 51% 49% 70%;
+  overflow: hidden;
+  position: relative;
+  clip-path: inset(0 0 0 0 round 30% 70% 62% 38% / 30% 51% 49% 70%);
+}
