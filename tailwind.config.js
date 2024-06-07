@@ -15,6 +15,13 @@ export default {
           light: "#6cb2eb", // Light variant
           dark: "#2779bd", // Dark variant
         },
+        accent: {
+          DEFAULT: "#2400FF",
+        },
+        div: {
+          krainaPsa: "#0A6F72",
+          VIILiceum: "#403F3B",
+        },
       },
       fontFamily: {
         title: ["Montserrat", "sans-serif"],

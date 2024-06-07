@@ -8,7 +8,7 @@ import arrow from "../assets/Arrow.svg";
 
 function WelcomeSection() {
   return (
-    <section className="mx-10 p-1 flex flex-col items-center w-3/4 self-center">
+    <section className="mx-10 p-1 flex flex-col items-center w-4/5 self-center">
       <menu className="flex justify-between mt-10 mb-4 w-full">
         <li>
           <img src={logo} alt="" />
@@ -17,7 +17,7 @@ function WelcomeSection() {
           {/* <img className="fixed right-11" src={hamburger} alt="" /> */}
           <a
             className="font-description text-2xl 
-            font-bold text-secondary"
+            font-bold text-secondary tracking-wide"
             href=""
           >
             Zatrudnij
