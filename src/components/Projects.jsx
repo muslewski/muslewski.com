@@ -133,6 +133,7 @@ function Projects() {
               hover:scale-105 transition-transform border-4 border-x-secondary border-y-transparent flex
               items-center gap-4 px-8"
               href="https://github.com/KentoDecem"
+              target="_blank"
             >
               <p className="max-w-36 text-center">Zobacz Inne projekty</p>
               <img className="w-12" src={github} alt="" />
