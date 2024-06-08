@@ -19,7 +19,7 @@ export default {
           DEFAULT: "#2400FF",
         },
         div: {
-          krainaPsa: "#0A6F72",
+          krainaPsa: "#407A26",
           VIILiceum: "#403F3B",
         },
       },

@@ -7,6 +7,9 @@ import kraina_psa from "../assets/kraina-psa.png";
 import liceum7 from "../assets/7lo.png";
 import school from "../assets/school.png";
 import github from "../assets/github.png";
+import connector from "../assets/connector4.svg";
+import connector2 from "../assets/connector3.svg";
+
 import { useState } from "react";
 
 function Projects() {
@@ -23,23 +26,25 @@ function Projects() {
           Strony Internetowe
         </h2>
 
-        <div className="mt-12 flex flex-col gap-24">
-          <div
-            onClick={() => setOpen1((prev) => !prev)}
-            className="self-center mt-20 w-full  hover:scale-105 transition-transform"
-          >
-            <div className="flex relative">
-              <h3 className="font-title text-xl text-white bg-secondary rounded-t-xl px-4 py-2 relative top-1">
-                Pol - Med
-              </h3>
-              <HammerGif />
-            </div>
-            <div className="border-4 border-secondary rounded-b-xl rounded-tr-xl">
-              <img
-                className="rounded-b-lg rounded-tr-lg"
-                src={pol_med}
-                alt=""
-              />
+        <div className="mt-16 flex flex-col gap-32">
+          <div className="self-center mt-20 w-full relative flex flex-col">
+            <div
+              className="hover:scale-105 transition-transform"
+              onClick={() => setOpen1((prev) => !prev)}
+            >
+              <div className="flex relative">
+                <h3 className="font-title text-xl text-white bg-secondary rounded-t-xl px-4 py-2 relative top-1">
+                  Pol - Med
+                </h3>
+                <HammerGif />
+              </div>
+              <div className="border-4 border-secondary rounded-b-xl rounded-tr-xl ">
+                <img
+                  className="rounded-b-md rounded-tr-lg"
+                  src={pol_med}
+                  alt=""
+                />
+              </div>
             </div>
             {open1 && (
               <p className="mt-10 font-description text-xl animate-fade-right">
@@ -57,21 +62,28 @@ function Projects() {
                 </a>
               </p>
             )}
+            {!open1 && (
+              <img
+                className="absolute top-full w-fit self-center z-0 opacity-80 pointer-events-none"
+                src={connector}
+                alt=""
+              />
+            )}
           </div>
 
           <div
             onClick={() => setOpen2((prev) => !prev)}
-            className="self-center mt-20 w-full  hover:scale-105 transition-transform"
+            className="self-center mt-20 w-full  hover:scale-105 transition-transform relative flex flex-col"
           >
-            <div className="flex relative">
-              <h3 className="font-title text-xl text-white bg-div-krainaPsa rounded-t-xl px-4 py-2 relative top-1">
+            <div className="flex relative justify-end">
+              <img className="w-28 absolute -top-16 left-5" src={dog} alt="" />
+              <h3 className="font-title text-xl text-white bg-div-krainaPsa rounded-t-xl px-4 py-2 relative top-1 ">
                 Kraina Psa
               </h3>
-              <img className="w-28 absolute -top-16 right-0" src={dog} alt="" />
             </div>
-            <div className="border-4 border-div-krainaPsa rounded-b-xl rounded-tr-xl">
+            <div className="border-4 border-div-krainaPsa rounded-b-xl rounded-tl-xl">
               <img
-                className="rounded-b-lg rounded-tr-lg"
+                className="rounded-b-lg rounded-tl-lg"
                 src={kraina_psa}
                 alt=""
               />
@@ -91,6 +103,13 @@ function Projects() {
                 </a>
               </p>
             )}
+            {!open2 && (
+              <img
+                className="absolute top-full w-fit self-center opacity-80"
+                src={connector2}
+                alt=""
+              />
+            )}
           </div>
 
           <div
@@ -102,7 +121,7 @@ function Projects() {
                 VII Liceum Bydgoszcz
               </h3>
               <img
-                className="w-28 absolute -top-16 -right-1 rotate-6"
+                className="w-28 absolute -top-16 -right-1 rotate-6 animate-wiggle"
                 src={liceum7}
                 alt=""
               />
@@ -127,7 +146,7 @@ function Projects() {
             )}
           </div>
 
-          <div className="mt-12">
+          <div className="mt-3d">
             <a
               className="font-title text-xl text--secondary rounded-full w-fit py-4 h-auto bg-no-repeat 
               hover:scale-105 transition-transform border-4 border-x-secondary border-y-transparent flex
