@@ -6,12 +6,12 @@ function Wrapper() {
   return (
     <>
       <img
-        className="pointer-events-none select-none fixed top-2-99 left-3 h-28 animate-fade-top-left"
+        className="pointer-events-none select-none fixed z-50 top-2-99 left-3 h-28 animate-fade-top-left"
         src={Subtract}
         alt=""
       />
       <img
-        className="pointer-events-none select-none fixed bottom-2-99 right-2 h-28 animate-fade-bottom-right"
+        className="pointer-events-none select-none fixed z-50 bottom-2-99 right-2 h-28 animate-fade-bottom-right"
         src={Subtract}
         alt=""
       />

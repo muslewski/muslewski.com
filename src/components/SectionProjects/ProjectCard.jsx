@@ -7,6 +7,7 @@ function ProjectCard({
   className,
   title,
   backgroundColor,
+  secondBackgroundColor,
   icon,
   thumbnail,
   paragraph,
@@ -25,14 +26,18 @@ function ProjectCard({
       >
         <div className="flex relative">
           <h3
-            className={`font-title text-xl text-white bg-${backgroundColor} rounded-t-xl px-4 py-2 relative top-1`}
+            className={`font-title text-xl font-medium text-white rounded-t-xl px-4 py-2 relative top-1`}
+            style={{
+              backgroundImage: `linear-gradient(-45deg, ${backgroundColor}, ${secondBackgroundColor})`,
+            }}
           >
             {title}
           </h3>
           {icon}
         </div>
         <div
-          className={`border-4 border-${backgroundColor} rounded-b-xl rounded-tr-xl`}
+          className={`border-4 rounded-b-xl rounded-tr-xl`}
+          style={{ borderColor: secondBackgroundColor }}
         >
           <img className="rounded-b-md rounded-tr-lg" src={thumbnail} alt="" />
         </div>
@@ -43,7 +48,10 @@ function ProjectCard({
           {paragraph}
           <Button
             tag="a"
-            className={`mt-10 bg-gradient-to-br from-${backgroundColor} to-zinc-500 text-base`}
+            className={`mt-10 to-zinc-500 text-base`}
+            style={{
+              backgroundImage: `linear-gradient(-45deg, ${backgroundColor}, ${secondBackgroundColor})`,
+            }}
             href="https://krainapsa.pl"
           >
             Kliknij aby przejść

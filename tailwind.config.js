@@ -18,10 +18,6 @@ export default {
         accent: {
           DEFAULT: "#2400FF",
         },
-        div: {
-          krainaPsa: "#407A26",
-          VIILiceum: "#403F3B",
-        },
       },
       fontFamily: {
         title: ["Montserrat", "sans-serif"],

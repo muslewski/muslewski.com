@@ -17,7 +17,7 @@ function Projects() {
       <Section className="mt-40">
         <Subtitle>
           Projekty
-          <hr className="self-start h-3 mt-1 rounded-md border-0 bg-gradient-to-r from-secondary to-accent/20" />
+          <hr className="self-start h-3 mt-1 rounded-md border-0 bg-gradient-to-r from-secondary to-secondary/20" />
         </Subtitle>
 
         <div className="mt-12 flex flex-col gap-24">
@@ -25,7 +25,8 @@ function Projects() {
             className="mt-20"
             title="Pol - Med"
             link="https://pol-med.tech"
-            backgroundColor="secondary"
+            backgroundColor="#240da5"
+            secondBackgroundColor="#0D005B"
             icon={
               <img
                 className="w-56 absolute -top-20 right-0"
@@ -43,7 +44,8 @@ function Projects() {
             className="mt-20"
             title="Kraina Psa"
             link="https://krainapsa.pl"
-            backgroundColor="div-krainaPsa"
+            backgroundColor="#5cb036"
+            secondBackgroundColor="#407a26"
             icon={
               <img className="w-28 absolute -top-16 right-5" src={dog} alt="" />
             }
@@ -57,7 +59,8 @@ function Projects() {
             className="mt-20"
             title="VII Liceum Bydgoszcz"
             link="https://7lo.bydgoszcz.pl/"
-            backgroundColor="div-VIILiceum"
+            backgroundColor="#885b8b"
+            secondBackgroundColor="#5a3c5d"
             icon={
               <img
                 className="w-28 absolute -top-16 -right-1 rotate-6 animate-wiggle"
