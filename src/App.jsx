@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import Settings from "./components/settings/Settings";
 import Wrapper from "./components/Wrapper/Wrapper";
-import WelcomeSection from "./components/WelcomeSection";
-import Introduction from "./components/Introduction";
-import Projects from "./components/Projects";
+import WelcomeSection from "./components/SectionWelcome/WelcomeSection";
+import Introduction from "./components/SectionIntroduction/Introduction";
+import Projects from "./components/SectionProjects/Projects";
 
 function App() {
   const { t, i18n } = useTranslation();

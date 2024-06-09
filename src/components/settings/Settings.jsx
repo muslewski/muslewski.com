@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { savedLanguage } from "../../i18n";
-import useTheme from "./useTheme";
-import useSound from "./useSound";
+import { savedLanguage } from "../../helpers/i18n";
+import useTheme from "../../helpers/useTheme";
+import useSound from "../../helpers/useSound";
 import initialSoundWav from "../../assets/sounds/initial.mp3";
-import Button from "./Button";
+import SettingsButton from "./SettingsButton";
 
 function Settings() {
   const [language, setLanguage] = useState(savedLanguage);

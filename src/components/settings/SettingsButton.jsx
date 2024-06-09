@@ -5,7 +5,7 @@ import buttonSound3 from "../../assets/sounds/button5.mp3";
 import buttonSound4 from "../../assets/sounds/button6.mp3";
 import buttonSound5 from "../../assets/sounds/button7.mp3";
 
-function Button({ children, playSound, ...props }) {
+function SettingsButton({ children, playSound, ...props }) {
   return (
     <button
       className="bg-slate-300"
@@ -17,4 +17,4 @@ function Button({ children, playSound, ...props }) {
   );
 }
 
-export default Button;
+export default SettingsButton;
