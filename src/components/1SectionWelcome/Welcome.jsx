@@ -1,6 +1,6 @@
 import React from "react";
 
-import fota from "../../assets/fota.png";
+import fota from "../../assets/fota.jpg";
 import fotaRaw from "../../assets/fota_raw.jpg";
 import person from "../../assets/person.png";
 import arrow from "../../assets/Arrow.svg";
@@ -20,7 +20,7 @@ function WelcomeSection() {
       </Title>
 
       <img
-        className="mt-12 animate-bounce animate-infinite animate-duration-[1500ms] animate-delay-500 animate-ease-in-out"
+        className="mt-10 animate-bounce animate-infinite animate-duration-[1500ms] animate-delay-500 animate-ease-in-out"
         src={arrow}
         alt=""
       />

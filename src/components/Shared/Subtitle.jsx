@@ -8,7 +8,7 @@ function Subtitle({ children, className, ...props }) {
   return (
     <h2
       ref={ref}
-      className={`font-title text-3xl font-medium text-secondary max-w-[75%] self-start animate-duration-[1500ms] animate-ease-out ${
+      className={`font-title text-3xl font-medium text-secondary w-fit self-start animate-duration-[1500ms] animate-ease-out ${
         isVisible ? "animate-fade-right" : "opacity-0"
       } ${className}`}
       {...props}
