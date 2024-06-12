@@ -12,7 +12,7 @@ function Menu() {
         <a
           className="font-description text-2xl 
         font-semibold text-secondary tracking-wide "
-          href=""
+          href="#kontakt"
         >
           Zatrudnij
         </a>

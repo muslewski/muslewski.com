@@ -1,4 +1,4 @@
-function Button({ tag = "button", children, className, ...props }) {
+function Button({ tag = "button", children, className = "", ...props }) {
   const Component = tag;
 
   let bg = "bg-secondary";

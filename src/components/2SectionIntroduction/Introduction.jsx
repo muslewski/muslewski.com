@@ -41,8 +41,8 @@ function Introduction() {
           Im trudniejszy projekt, tym lepiej!
         </b>
         <br />
-        Współpracując ze mną, zyskasz technicznego eksperta i partnera, który z
-        pasją przekształca Twoje pomysły w rzeczywistość.
+        Chętnie zrealizuję Twój pomysł na imponującą stronę internetową, która
+        zachwyci klientów.
       </p>
 
       <div className="self-start hover:scale-105 transition-transform flex flex-col cursor-pointer">

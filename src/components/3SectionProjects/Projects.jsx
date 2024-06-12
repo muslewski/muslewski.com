@@ -17,6 +17,8 @@ import ProjectCard from "./ProjectCard";
 
 import { useState, useRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
+import GradientLine from "../Shared/GradientLine";
+import Brief from "../Shared/Brief";
 
 function Projects() {
   const ref1 = useRef();
@@ -32,10 +34,14 @@ function Projects() {
       <Section className="mt-40">
         <Subtitle>
           Projekty
-          <hr className="self-start h-3 mt-1 rounded-md border-0 bg-gradient-to-r from-secondary to-secondary/0" />
+          <GradientLine />
         </Subtitle>
+        <Brief>
+          Rzuć okiem na moje portfolio. <br />
+          Mam nadzieję, że Cię zaintryguje!
+        </Brief>
 
-        <div className="mt-12 flex flex-col gap-24">
+        <div className="mt-20 flex flex-col gap-[5.5rem]">
           <ProjectCard
             className="mt-20"
             title="Pol - Med"
@@ -68,8 +74,8 @@ function Projects() {
             icon={
               <img
                 ref={ref2}
-                className={`w-28 absolute -top-8 right-5 z-20 animate-twice animate-duration-[1000ms] animate-fill-forwards animate-ease-in ${
-                  isVisible2 ? "animate-bounce" : ""
+                className={`w-28 absolute -top-16 right-5 z-20 opacity-0 animate-duration-[2000ms] animate-ease-in-out ${
+                  isVisible2 ? "animate-fade-up" : ""
                 }`}
                 src={dog}
                 alt=""
@@ -91,8 +97,8 @@ function Projects() {
             icon={
               <img
                 ref={ref3}
-                className={`w-28 absolute -top-16 right-2 rotate-6 z-10 animate-twice animate-duration-1000 animate-ease-in-out ${
-                  isVisible3 ? "animate-wiggle" : ""
+                className={`w-28 absolute -top-16 right-2 rotate-6 z-10 animate-duration-[2000ms] animate-ease-in-out ${
+                  isVisible3 ? "animate-fade-up" : ""
                 }`}
                 src={liceum7}
                 alt=""
@@ -108,7 +114,7 @@ function Projects() {
           <div className="mt-6">
             <Button
               tag="a"
-              className="flex items-center justify-center gap-6 bg-gradient-to-br from-gray-950 to-gray-700/90"
+              className="flex items-center justify-center gap-6 px-6 bg-gradient-to-br from-gray-900 to-gray-600/80"
               href="https://github.com/KentoDecem"
               target="_blank"
             >

@@ -1,21 +1,21 @@
 import { useRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
 
-function Subtitle({ children, className, ...props }) {
+function Brief({ children, className, ...props }) {
   const ref = useRef();
   const isVisible = useIsVisible(ref, true);
 
   return (
-    <h2
+    <h3
       ref={ref}
-      className={`font-title text-3xl font-medium text-secondary w-full self-start animate-duration-[1500ms] animate-ease-out ${
+      className={`font-description text-xl font-medium text-secondary w-fit self-start animate-duration-[1500ms] animate-ease-out ${
         isVisible ? "animate-fade-right" : "opacity-0"
       } ${className}`}
       {...props}
     >
       {children}
-    </h2>
+    </h3>
   );
 }
 
-export default Subtitle;
+export default Brief;

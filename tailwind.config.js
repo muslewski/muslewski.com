@@ -18,6 +18,9 @@ export default {
         accent: {
           DEFAULT: "#2400FF",
         },
+        accent2: {
+          DEFAULT: "#1800AD",
+        },
       },
       fontFamily: {
         title: ["Montserrat", "sans-serif"],
