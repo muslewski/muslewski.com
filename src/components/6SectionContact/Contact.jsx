@@ -7,16 +7,20 @@ import Brief from "../Shared/Brief";
 
 import Lottie from "react-lottie";
 import contactJson from "../../lotties/contact4.json";
+import messageJson from "../../lotties/message.json";
 import Input from "./Input";
 import Button from "../Shared/Button";
 
 function Contact() {
   const [isSend, setIsSend] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const form = useRef(null);
 
   const handleSendEmail = async (e) => {
     e.preventDefault();
+
+    setButtonClicked(true);
 
     emailjs
       .sendForm(
@@ -28,7 +32,10 @@ function Contact() {
       .then((result) => {
         console.log(result.text);
         setIsSend(true);
-        setTimeout(() => setIsSend(false), 2500);
+        setTimeout(() => {
+          setIsSend(false);
+          setButtonClicked(false);
+        }, 2500);
       })
       .catch((error) => {
         console.log(error.text);
@@ -39,6 +46,15 @@ function Contact() {
     loop: true,
     autoplay: true,
     animationData: contactJson,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const message = {
+    loop: false,
+    autoplay: true,
+    animationData: messageJson,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -80,8 +96,16 @@ function Contact() {
           invalidText="Będę wdzięczny za podanie szczegółów w wiadomości."
           textarea
         />
-        <Button>Wyślij</Button>
-        {isSend && <p>Email has been set succesfully</p>}
+        <Button
+          className={buttonClicked ? "pointer-events-none bg-secondary/80" : ""}
+        >
+          Wyślij
+        </Button>
+        {isSend && (
+          <div className="fixed z-40 top-10 right-1/2 translate-x-1/2 pointer-events-none">
+            <Lottie options={message} width={350} />
+          </div>
+        )}
       </form>
     </Section>
   );
