@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import Section from "../Shared/Section";
 import Subtitle from "../Shared/Subtitle";
 import GradientLine from "../Shared/GradientLine";
@@ -10,10 +11,28 @@ import Input from "./Input";
 import Button from "../Shared/Button";
 
 function Contact() {
-  const form = useRef();
+  const [isSend, setIsSend] = useState(false);
+
+  const form = useRef(null);
 
   const handleSendEmail = async (e) => {
     e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_1aqik82",
+        "template_f8g2d8r",
+        form.current,
+        "XeDaxKDYwvWpoAeQo"
+      )
+      .then((result) => {
+        console.log(result.text);
+        setIsSend(true);
+        setTimeout(() => setIsSend(false), 2500);
+      })
+      .catch((error) => {
+        console.log(error.text);
+      });
   };
 
   const contact = {
@@ -44,18 +63,25 @@ function Contact() {
         className="mt-16 flex flex-col gap-12"
         onSubmit={handleSendEmail}
       >
-        <Input sign="Imię" invalidText="Jak mogę się do Ciebie zwracać?" />
         <Input
+          name="user_name"
+          sign="Imię"
+          invalidText="Jak mogę się do Ciebie zwracać?"
+        />
+        <Input
+          name="user_email"
           sign="Email"
           inputType="email"
           invalidText="Spokojnie, nie wyspamuję Cię. Wpisz swój email."
         />
         <Input
+          name="message"
           sign="Wiadomość"
           invalidText="Będę wdzięczny za podanie szczegółów w wiadomości."
           textarea
         />
         <Button>Wyślij</Button>
+        {isSend && <p>Email has been set succesfully</p>}
       </form>
     </Section>
   );
