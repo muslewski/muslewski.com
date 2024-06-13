@@ -65,18 +65,18 @@ function Contact() {
       >
         <Input
           name="user_name"
-          sign="Imię"
+          title="Imię"
           invalidText="Jak mogę się do Ciebie zwracać?"
         />
         <Input
           name="user_email"
-          sign="Email"
+          title="Email"
           inputType="email"
           invalidText="Spokojnie, nie wyspamuję Cię. Wpisz swój email."
         />
         <Input
           name="message"
-          sign="Wiadomość"
+          title="Wiadomość"
           invalidText="Będę wdzięczny za podanie szczegółów w wiadomości."
           textarea
         />

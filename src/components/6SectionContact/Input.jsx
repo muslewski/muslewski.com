@@ -1,6 +1,6 @@
-import React, { useState, forwardRef } from "react";
+import React, { useState } from "react";
 
-function Input(name, sign, textarea, inputType, invalidText) {
+function Input({ name, title, textarea, inputType, invalidText }) {
   const [value, setValue] = useState("");
 
   function handleChange(event) {
@@ -15,7 +15,7 @@ function Input(name, sign, textarea, inputType, invalidText) {
   return (
     <label>
       <span className="font-title text-xl font-medium text-secondary">
-        {sign}
+        {title}
       </span>
       {textarea ? (
         <textarea
