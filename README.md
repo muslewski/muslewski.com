@@ -16,7 +16,7 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 
 ### Remember about:
 
-- Update mateusz-muslewski repo readme.md
+- Update mateusz-muslewski repo readme.md https://rahuldkjain.github.io/gh-profile-readme-generator/
 - Custom email mateusz@muslewski.com
 - Custom scrollbar (even that it will not work on firefox)
 - Google Analytics to improve UX
