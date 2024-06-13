@@ -13,14 +13,20 @@ import Input from "./Input";
 import Button from "../Shared/Button";
 
 function Contact() {
+  // State for sending status
   const [isSend, setIsSend] = useState(false);
+  // State for disabling the button before we find out if the message was sent
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  // States that are used for displaying error messages
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
 
+  // Ref that is responsible for sending form
   const form = useRef(null);
 
+  // Refs for validating the input value
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
@@ -28,6 +34,7 @@ function Contact() {
   const handleSendEmail = async (e) => {
     e.preventDefault();
 
+    // Reset the error messages
     setNameError("");
     setEmailError("");
     setMessageError("");
@@ -37,31 +44,33 @@ function Contact() {
     const message = messageRef.current.value;
 
     if (name.length < 1) {
+      // If there is no name
       setNameError("Jak mogę się do Ciebie zwracać?");
       nameRef.current.focus();
     } else if (email.length < 1) {
+      // If there is no email
       setEmailError("Spokojnie, nie wyspamuję Cię. Wpisz swój email.");
       emailRef.current.focus();
     } else if (!email.includes("@")) {
+      // If email don't have @
       emailRef.current.focus();
       setEmailError(
         "Hmmm, ten adres email wygląda dziwnie. Może spróbuj jeszcze raz z '@'?"
       );
     } else if (!EmailValidator.validate(email)) {
+      // If email is valid
       emailRef.current.focus();
       setEmailError("Czy na pewno wpisałeś/aś prawidłowy adres email?");
     } else if (message.length < 1) {
+      // If there is no message
       messageRef.current.focus();
       setMessageError(
         "Napisz wiadomość, abyśmy mogli rozpocząć owocną współpracę."
       );
     } else {
-      console.log("Name:", name);
-      console.log("Email:", email);
-      console.log("Message:", message);
-
       setButtonClicked(true);
 
+      // Heart of the message sending
       emailjs
         .sendForm(
           "service_1aqik82",
@@ -83,7 +92,7 @@ function Contact() {
     }
   };
 
-  const contact = {
+  const contactAnimation = {
     loop: true,
     autoplay: true,
     animationData: contactJson,
@@ -92,7 +101,7 @@ function Contact() {
     },
   };
 
-  const message = {
+  const messageAnimation = {
     loop: false,
     autoplay: true,
     animationData: messageJson,
@@ -104,7 +113,7 @@ function Contact() {
   return (
     <Section className="mt-32" id="kontakt">
       <div className="self-start mb-10">
-        <Lottie options={contact} height={180} width={200} />
+        <Lottie options={contactAnimation} height={180} width={200} />
       </div>
       <Subtitle>
         Zapraszam do kontaktu!
@@ -154,7 +163,7 @@ function Contact() {
         </Button>
         {isSend && (
           <div className="fixed z-40 top-10 right-1/2 translate-x-1/2 pointer-events-none">
-            <Lottie options={message} width={350} />
+            <Lottie options={messageAnimation} width={350} />
           </div>
         )}
       </form>
