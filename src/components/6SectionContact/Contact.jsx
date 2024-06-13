@@ -14,32 +14,74 @@ import Button from "../Shared/Button";
 function Contact() {
   const [isSend, setIsSend] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
 
   const form = useRef(null);
+
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
 
   const handleSendEmail = async (e) => {
     e.preventDefault();
 
-    setButtonClicked(true);
+    setNameError("");
+    setEmailError("");
+    setMessageError("");
 
-    emailjs
-      .sendForm(
-        "service_1aqik82",
-        "template_f8g2d8r",
-        form.current,
-        "XeDaxKDYwvWpoAeQo"
-      )
-      .then((result) => {
-        console.log(result.text);
-        setIsSend(true);
-        setTimeout(() => {
-          setIsSend(false);
-          setButtonClicked(false);
-        }, 2500);
-      })
-      .catch((error) => {
-        console.log(error.text);
-      });
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const message = messageRef.current.value;
+
+    if (name.length < 1) {
+      setNameError("Jak mogę się do Ciebie zwracać?");
+      nameRef.current.focus();
+    } else if (email.length < 1) {
+      setEmailError("Spokojnie, nie wyspamuję Cię. Wpisz swój email.");
+      emailRef.current.focus();
+    } else if (!email.includes("@")) {
+      emailRef.current.focus();
+      setEmailError(
+        "Hmmm, ten adres email wygląda dziwnie. Może spróbuj jeszcze raz z '@'?"
+      );
+    } else if (!email.includes(".")) {
+      emailRef.current.focus();
+      setEmailError(
+        "Czy na pewno wpisałeś/aś prawidłowy adres email? Brakuje kropki po '@'."
+      );
+    } else if (message.length < 1) {
+      messageRef.current.focus();
+      setMessageError(
+        "Napisz wiadomość, abyśmy mogli rozpocząć owocną współpracę."
+      );
+    } else {
+      console.log("Name:", name);
+      console.log("Email:", email);
+      console.log("Message:", message);
+
+      setButtonClicked(true);
+
+      emailjs
+        .sendForm(
+          "service_1aqik82",
+          "template_f8g2d8r",
+          form.current,
+          "XeDaxKDYwvWpoAeQo"
+        )
+        .then((result) => {
+          console.log(result.text);
+          setIsSend(true);
+          setTimeout(() => {
+            setIsSend(false);
+            setButtonClicked(false);
+          }, 2500);
+        })
+        .catch((error) => {
+          console.log(error.text);
+        });
+    }
   };
 
   const contact = {
@@ -80,24 +122,34 @@ function Contact() {
         onSubmit={handleSendEmail}
       >
         <Input
+          ref={nameRef}
           name="user_name"
           title="Imię"
-          invalidText="Jak mogę się do Ciebie zwracać?"
+          send={isSend}
+          errorText={nameError}
         />
         <Input
+          ref={emailRef}
           name="user_email"
           title="Email"
           inputType="email"
-          invalidText="Spokojnie, nie wyspamuję Cię. Wpisz swój email."
+          send={isSend}
+          errorText={emailError}
         />
         <Input
+          ref={messageRef}
           name="message"
           title="Wiadomość"
-          invalidText="Będę wdzięczny za podanie szczegółów w wiadomości."
+          send={isSend}
+          errorText={messageError}
           textarea
         />
         <Button
-          className={buttonClicked ? "pointer-events-none bg-secondary/80" : ""}
+          className={
+            buttonClicked
+              ? "hover:scale-105 transition-transform pointer-events-none bg-secondary/80"
+              : "hover:scale-105 transition-transform"
+          }
         >
           Wyślij
         </Button>

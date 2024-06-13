@@ -1,49 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 
-function Input({ name, title, textarea, inputType, invalidText }) {
-  const [value, setValue] = useState("");
+const Input = forwardRef(
+  ({ name, title, textarea, inputType, errorText, send }, ref) => {
+    const [value, setValue] = useState("");
 
-  function handleChange(event) {
-    setValue(event.target.value);
-    event.target.setCustomValidity("");
+    useEffect(() => {
+      setValue("");
+    }, [send]);
+
+    function handleChange(event) {
+      setValue(event.target.value);
+      event.target.setCustomValidity("");
+    }
+
+    let type = inputType || "text";
+    const classStyling =
+      "w-full p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description outline-blue-600";
+
+    return (
+      <label>
+        <span className="font-title text-xl font-medium text-secondary">
+          {title}
+        </span>
+        {textarea ? (
+          <textarea
+            ref={ref}
+            name={name}
+            rows="4"
+            className={classStyling}
+            value={value}
+            onChange={handleChange}
+          />
+        ) : (
+          <input
+            ref={ref}
+            name={name}
+            type="text"
+            className={classStyling}
+            value={value}
+            onChange={handleChange}
+          />
+        )}
+
+        {errorText.length > 0 && (
+          <span className="font-description text-xl font-medium text-blue-900">
+            {errorText}
+          </span>
+        )}
+      </label>
+    );
   }
-
-  let type = inputType || "text";
-  const classStyling =
-    "w-full p-2 mt-2 border-secondary/10 border-2 text-xl rounded-lg font-description";
-
-  return (
-    <label>
-      <span className="font-title text-xl font-medium text-secondary">
-        {title}
-      </span>
-      {textarea ? (
-        <textarea
-          name={name}
-          rows="4"
-          className={classStyling}
-          value={value}
-          onChange={handleChange}
-          required
-          onInvalid={(e) => {
-            e.target.setCustomValidity(invalidText);
-          }}
-        />
-      ) : (
-        <input
-          name={name}
-          type={type}
-          className={classStyling}
-          value={value}
-          onChange={handleChange}
-          required
-          onInvalid={(e) => {
-            e.target.setCustomValidity(invalidText);
-          }}
-        />
-      )}
-    </label>
-  );
-}
+);
 
 export default Input;
