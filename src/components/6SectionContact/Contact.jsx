@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import EmailValidator from "email-validator";
 import Section from "../Shared/Section";
 import Subtitle from "../Shared/Subtitle";
 import GradientLine from "../Shared/GradientLine";
@@ -46,11 +47,9 @@ function Contact() {
       setEmailError(
         "Hmmm, ten adres email wygląda dziwnie. Może spróbuj jeszcze raz z '@'?"
       );
-    } else if (!email.includes(".")) {
+    } else if (!EmailValidator.validate(email)) {
       emailRef.current.focus();
-      setEmailError(
-        "Czy na pewno wpisałeś/aś prawidłowy adres email? Brakuje kropki po '@'."
-      );
+      setEmailError("Czy na pewno wpisałeś/aś prawidłowy adres email?");
     } else if (message.length < 1) {
       messageRef.current.focus();
       setMessageError(

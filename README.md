@@ -10,6 +10,7 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 
 ### Remember about:
 
+- Custom email mateusz@muslewski.com
 - Custom scrollbar (even that it will not work on firefox)
 - Google Analytics to improve UX
 - Offline Mode
