@@ -16,6 +16,7 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 ### Remember about:
 
 - "Więcej o mnie" button
+- Hamburger Menu
 - Make CV
 - Update mateusz-muslewski repo readme.md
   https://rahuldkjain.github.io/gh-profile-readme-generator/
