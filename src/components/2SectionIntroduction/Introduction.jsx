@@ -45,7 +45,7 @@ function Introduction() {
         zachwyci klientów.
       </p>
 
-      <div className="self-start hover:scale-105 transition-transform flex flex-col cursor-pointer">
+      {/* <div className="self-start hover:scale-105 transition-transform flex flex-col cursor-pointer">
         <div className="-mb-7 pointer-events-none">
           <Lottie options={developer} height={180} width={180} />
         </div>
@@ -53,7 +53,7 @@ function Introduction() {
         <Button className="rounded-tr-lg rounded-bl-lg rounded-br-more rounded-tl-more">
           Więcej o mnie
         </Button>
-      </div>
+      </div> */}
     </Section>
   );
 }
