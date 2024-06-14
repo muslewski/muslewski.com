@@ -11,7 +11,6 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 - Social Media:
   - Github
   - LinkedIn
-  - Dribble
   - Instagram
 
 ### Remember about:
@@ -19,6 +18,7 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 - Update mateusz-muslewski repo readme.md
   https://rahuldkjain.github.io/gh-profile-readme-generator/
   https://www.youtube.com/watch?v=rCt9DatF63I&t=173s
+  and remember to pin more projects
 - Custom email mateusz@muslewski.com
 - Custom scrollbar (even that it will not work on firefox)
 - Google Analytics to improve UX

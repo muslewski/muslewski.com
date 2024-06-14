@@ -22,7 +22,7 @@ function App() {
       <Education />
       <Contact />
 
-      <hr className="opacity-0 pb-44" />
+      <hr className="opacity-0 pb-16" />
     </div>
   );
 }

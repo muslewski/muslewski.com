@@ -126,7 +126,7 @@ function Contact() {
 
       <form
         ref={form}
-        className="mt-16 flex flex-col gap-12"
+        className=" self-start w-full mt-16 flex flex-col gap-12"
         onSubmit={handleSendEmail}
       >
         <Input
@@ -167,6 +167,19 @@ function Contact() {
           </div>
         )}
       </form>
+
+      {/* Change below to other section footer */}
+      <div className="mt-28  flex flex-col w-full font-description text-xl text-center font-medium">
+        <ul className="self-start flex gap-6 w-full justify-between">
+          <li>Github</li>
+          <li>LinkedIn</li>
+          <li>Facebook</li>
+        </ul>
+
+        <a className="self-end w-fit mt-16" href="mailto:mateusz.mus@proton.me">
+          mateusz.mus@proton.me
+        </a>
+      </div>
     </Section>
   );
 }
