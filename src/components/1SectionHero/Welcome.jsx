@@ -19,11 +19,13 @@ function WelcomeSection() {
         Cześć, jestem <b className="font-medium">Mateusz</b>.
       </Title>
 
-      <img
-        className="mt-10 animate-bounce animate-infinite animate-duration-[1500ms] animate-delay-500 animate-ease-in-out"
-        src={arrow}
-        alt=""
-      />
+      <a href="#wprowadzenie">
+        <img
+          className="mt-10 animate-bounce animate-infinite animate-duration-[1500ms] animate-delay-500 animate-ease-in-out"
+          src={arrow}
+          alt=""
+        />
+      </a>
     </Section>
   );
 }

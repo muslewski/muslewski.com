@@ -7,7 +7,12 @@ import EducationObject from "./EducationObject";
 import verticalLine from "../../assets/verticalLine.svg";
 import Brief from "../Shared/Brief";
 
+import { useRef } from "react";
+import { useIsVisible } from "../../helpers/useIsVisible";
+
 function Education() {
+  const ref = useRef();
+  const isVisible = useIsVisible(ref, true);
   return (
     <Section className="mt-40">
       <Subtitle>
@@ -23,7 +28,12 @@ function Education() {
         planowaną uczelnię.
       </Brief>
       <div className="mt-20 self-start h-56 flex flex-col  justify-start gap-16 text-xl font-description relative">
-        <div className="absolute h-full w-6 left-20">
+        <div
+          ref={ref}
+          className={`absolute h-full w-6 left-20 animate-duration-[3000ms] animate-ease-out ${
+            isVisible ? "animate-fade" : "opacity-0"
+          }`}
+        >
           <img className="h-full w-full" src={verticalLine} alt="" />
         </div>
         <EducationObject

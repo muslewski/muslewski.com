@@ -1,8 +1,12 @@
 import React, { useState, useEffect, forwardRef } from "react";
+import { useRef } from "react";
+import { useIsVisible } from "../../helpers/useIsVisible";
 
 const Input = forwardRef(
   ({ name, title, textarea, inputType, errorText, send }, ref) => {
     const [value, setValue] = useState("");
+    const refVisibility = useRef();
+    const isVisible = useIsVisible(refVisibility, true);
 
     useEffect(() => {
       setValue("");
@@ -18,7 +22,7 @@ const Input = forwardRef(
       "w-full p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description outline-blue-600";
 
     return (
-      <label>
+      <label ref={refVisibility}>
         <span className="font-title text-xl font-medium text-secondary">
           {title}
         </span>

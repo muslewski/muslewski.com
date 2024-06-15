@@ -27,7 +27,7 @@ function Introduction() {
   };
 
   return (
-    <Section className="mt-24">
+    <Section className="mt-24" id="wprowadzenie">
       <span className="self-start relative flex gap-0 items-center w-full font-title text-3xl">
         <Subtitle className="z-10 relative">Full Stack Developer</Subtitle>
         <div className="pointer-events-none max-w-12 max-h-12 relative -left-24 bottom-16 ">
