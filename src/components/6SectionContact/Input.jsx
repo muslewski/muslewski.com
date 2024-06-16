@@ -22,7 +22,12 @@ const Input = forwardRef(
       "w-full p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description outline-blue-600";
 
     return (
-      <label ref={refVisibility}>
+      <label
+        ref={refVisibility}
+        className={`animate-ease-in-out animate-duration-[1600ms] opacity-0 ${
+          isVisible ? "animate-fade-up" : ""
+        }`}
+      >
         <span className="font-title text-xl font-medium text-secondary">
           {title}
         </span>

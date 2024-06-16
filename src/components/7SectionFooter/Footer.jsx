@@ -4,15 +4,16 @@ import linkedin from "../../assets/linkedin.svg";
 import github from "../../assets/github.svg";
 import x from "../../assets/x.svg";
 import LinkCard from "./LinkCard";
+import GradientLine from "../Shared/GradientLine";
 
 function Footer() {
   return (
     <Section className="mt-32">
       <footer className="flex flex-col w-full font-description text-secondary text-xl text-center font-medium">
-        <ul className="flex flex-col gap-16 w-full py-2 justify-start items-start text-left">
+        <ul className="mb-10 flex flex-col gap-16 w-full py-2 justify-start items-start text-left">
           <li>
             <a href="mailto:mateusz.mus@pm.me">
-              <span className="border-2 p-2 mr-5 rounded-md border-secondary/10 shadow-secondary/10 shadow-md">
+              <span className="border-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
                 Email
               </span>
               <span className="underline underline-offset-2">
@@ -22,7 +23,7 @@ function Footer() {
           </li>
           <li>
             <a href="#">
-              <span className="border-2 p-2 mr-5 rounded-md border-secondary/10 shadow-secondary/10 shadow-md">
+              <span className="border-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
                 Życiorys zawodowy
               </span>
               <span className="underline underline-offset-2">CV</span>
@@ -30,11 +31,9 @@ function Footer() {
           </li>
         </ul>
 
-        <h4 className="border-2 mt-14 p-2 rounded-md w-fit border-secondary/10 shadow-secondary/10 shadow-md">
-          Social Media
-        </h4>
+        <GradientLine />
 
-        <ul className="mt-10 flex gap-12 flex-wrap w-full justify-start text-white border-secondary border-l-2 pl-6">
+        <ul className="mt-10 flex gap-12 flex-wrap w-full justify-start text-white pl-2">
           <LinkCard
             text="GitHub"
             logo={github}

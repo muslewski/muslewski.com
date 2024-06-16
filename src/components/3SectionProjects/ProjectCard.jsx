@@ -22,7 +22,7 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`self-center w-full relative flex flex-col animate-duration-[1600ms] opacity-0 animate-ease-in-out ${
+      className={`self-center w-full relative flex flex-col animate-duration-1000 opacity-0 animate-ease-in-out ${
         isVisible ? "animate-fade-up" : ""
       } ${className}`}
       {...props}
