@@ -6,6 +6,7 @@ import developerJson from "../../lotties/developer.json";
 import Subtitle from "../Shared/Subtitle";
 import Section from "../Shared/Section";
 import Button from "../Shared/Button";
+import GradientLine from "../Shared/GradientLine";
 
 function Introduction() {
   const astronaut = {
@@ -27,14 +28,19 @@ function Introduction() {
   };
 
   return (
-    <Section className="mt-24" id="wprowadzenie">
+    <Section className="pt-24" id="wprowadzenie">
       <span className="self-start relative flex gap-0 items-center w-full font-title text-3xl">
-        <Subtitle className="z-10 relative">Full Stack Developer</Subtitle>
+        <Subtitle className="z-10 relative">
+          <span className="font-description text-2xl">Jako</span>
+          <br></br> Full Stack Developer
+        </Subtitle>
         <div className="pointer-events-none max-w-12 max-h-12 relative -left-24 bottom-16 ">
           <Lottie options={astronaut} height={150} width={150} />
         </div>
       </span>
-      <p className="font-description text-xl my-10 leading-normal">
+      <GradientLine />
+
+      <p className="font-description text-xl mb-10 leading-normal">
         Uwielbiam tworzyć nowoczesne strony i aplikacje internetowe.
         <br />
         <b className="inline-block font-semibold my-3">

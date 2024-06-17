@@ -52,3 +52,13 @@
     transform: translate(0px, 0px);
   }
 }
+
+.filter-green {
+  filter: brightness(0) saturate(100%) invert(61%) sepia(60%) saturate(498%)
+    hue-rotate(57deg) brightness(87%) contrast(89%);
+}
+
+.filter-pink {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(7%) saturate(2808%)
+    hue-rotate(248deg) brightness(87%) contrast(80%);
+}

@@ -31,7 +31,7 @@ function Projects() {
   const isVisible3 = useIsVisible(ref3, true);
   return (
     <>
-      <Section className="mt-40">
+      <Section id="projekty" className="pt-40">
         <Subtitle>
           Projekty
           <GradientLine />

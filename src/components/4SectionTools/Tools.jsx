@@ -15,7 +15,7 @@ import Brief from "../Shared/Brief";
 
 function Tools() {
   return (
-    <Section className="mt-40">
+    <Section id="technologie" className="pt-40">
       <Subtitle>
         Technologie, których używam
         <GradientLine />

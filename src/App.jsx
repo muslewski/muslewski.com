@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Settings from "./components/settings/Settings";
 import Wrapper from "./components/Wrapper/Wrapper";
@@ -11,10 +12,11 @@ import Footer from "./components/7SectionFooter/Footer";
 
 function App() {
   const { t, i18n } = useTranslation();
+  const [primaryColor, setPrimaryColor] = useState("pink");
 
   return (
-    <div className="flex flex-col items-start bg-white">
-      <Wrapper />
+    <div className="flex flex-col items-start bg-white w-full">
+      <Wrapper primaryColor={primaryColor} />
       {/* <Settings /> */}
       <WelcomeSection />
       <Introduction />

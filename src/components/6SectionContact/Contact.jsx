@@ -111,7 +111,7 @@ function Contact() {
   };
 
   return (
-    <Section className="mt-32" id="kontakt">
+    <Section className="pt-32" id="kontakt">
       <div className="self-start mb-10">
         <Lottie options={contactAnimation} height={180} width={200} />
       </div>

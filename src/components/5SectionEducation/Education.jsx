@@ -14,7 +14,7 @@ function Education() {
   const ref = useRef();
   const isVisible = useIsVisible(ref, true);
   return (
-    <Section className="mt-40">
+    <Section id="edukacja" className="pt-40">
       <Subtitle>
         Edukacja
         <GradientLine />

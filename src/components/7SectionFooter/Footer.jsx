@@ -13,7 +13,7 @@ function Footer() {
         <ul className="mb-10 flex flex-col gap-16 w-full py-2 justify-start items-start text-left">
           <li>
             <a href="mailto:mateusz.mus@pm.me">
-              <span className="border-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
+              <span className="border-b-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
                 Email
               </span>
               <span className="underline underline-offset-2">
@@ -23,7 +23,7 @@ function Footer() {
           </li>
           <li>
             <a href="#">
-              <span className="border-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
+              <span className="border-b-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
                 Życiorys zawodowy
               </span>
               <span className="underline underline-offset-2">CV</span>
