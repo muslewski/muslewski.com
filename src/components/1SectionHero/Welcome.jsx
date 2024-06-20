@@ -29,8 +29,8 @@ function WelcomeSection() {
         </div>
         {/* <img src={person} className="h-80 person-img blob-border-radius" /> */}
 
-        <div className="flex flex-col justify-center items-center lg:gap-6 max-w-3xl ">
-          <Title className="lg:text-left">
+        <div className="flex flex-col justify-center  items-center lg:gap-6 max-w-3xl ">
+          <Title className="lg:text-center self-start">
             Cześć, jestem <b className="font-medium">Mateusz</b>.
           </Title>
 

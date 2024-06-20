@@ -111,7 +111,7 @@ function Contact() {
   };
 
   return (
-    <Section className="pt-32" id="kontakt">
+    <Section className="pt-36 lg:pt-56 justify-start max-w-7xl" id="kontakt">
       <div className="self-start mb-10">
         <Lottie options={contactAnimation} height={180} width={200} />
       </div>

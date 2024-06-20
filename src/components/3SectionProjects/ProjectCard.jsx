@@ -22,7 +22,7 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`self-center w-full relative flex flex-col animate-duration-1000 opacity-0 animate-ease-in-out ${
+      className={`self-start w-full max-w-80 relative flex flex-col animate-duration-1000 opacity-0 animate-ease-in-out ${
         isVisible ? "animate-fade-up" : ""
       } ${className}`}
       {...props}
@@ -65,6 +65,7 @@ function ProjectCard({
               backgroundImage: `linear-gradient(-45deg, ${backgroundColor}, ${secondBackgroundColor})`,
             }}
             href={link}
+            target="_blank"
           >
             Kliknij aby przejść
           </Button>

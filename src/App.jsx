@@ -26,7 +26,7 @@ function App() {
       <Contact />
       <Footer />
 
-      <hr className="opacity-0 pb-16" />
+      <hr className="opacity-0 pb-20" />
     </div>
   );
 }

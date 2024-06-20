@@ -19,12 +19,12 @@ const Input = forwardRef(
 
     let type = inputType || "text";
     const classStyling =
-      "w-full p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description outline-blue-600";
+      "w-full max-w-3xl p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description outline-blue-600";
 
     return (
       <label
         ref={refVisibility}
-        className={`animate-ease-in-out animate-duration-[1600ms] opacity-0 ${
+        className={`flex flex-col animate-ease-in-out animate-duration-[1600ms] opacity-0 ${
           isVisible ? "animate-fade-up" : ""
         }`}
       >

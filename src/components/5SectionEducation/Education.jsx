@@ -14,7 +14,7 @@ function Education() {
   const ref = useRef();
   const isVisible = useIsVisible(ref, true);
   return (
-    <Section id="edukacja" className="pt-40">
+    <Section id="edukacja" className="pt-40 lg:pt-60 justify-start max-w-7xl">
       <Subtitle>Edukacja</Subtitle>
       <GradientLine />
 
@@ -29,7 +29,7 @@ function Education() {
       <div className="mt-20 self-start h-56 flex flex-col  justify-start gap-16 text-xl font-description relative">
         <div
           ref={ref}
-          className={`absolute h-full w-6 left-20 animate-duration-[3000ms] animate-ease-out ${
+          className={`absolute h-full w-6 left-20 lg:left-[7rem] animate-duration-[3000ms] animate-ease-out ${
             isVisible ? "animate-fade" : "opacity-0"
           }`}
         >

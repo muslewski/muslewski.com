@@ -31,15 +31,15 @@ function Projects() {
   const isVisible3 = useIsVisible(ref3, true);
   return (
     <>
-      <Section id="projekty" className="pt-40">
+      <Section id="projekty" className="pt-40 lg:pt-60 justify-start max-w-7xl">
         <Subtitle>Projekty</Subtitle>
         <GradientLine />
         <Brief>
-          Rzuć okiem na moje portfolio. <br />
+          <span className="flex lg:inline">Rzuć okiem na moje portfolio.</span>{" "}
           Mam nadzieję, że Cię zaintryguje!
         </Brief>
 
-        <div className="mt-20 flex flex-col gap-[5.5rem]">
+        <div className="mt-20 flex flex-col lg:flex-row flex-wrap gap-20 lg:gap-24 items-end self-start justify-start ">
           <ProjectCard
             className="mt-20"
             title="Pol - Med"
@@ -113,7 +113,7 @@ function Projects() {
             <Button
               tag="a"
               className="flex items-center justify-center gap-6 px-6 bg-gradient-to-br from-gray-900 to-gray-600/80"
-              href="https://github.com/KentoDecem"
+              href="https://github.com/muslewski"
               target="_blank"
             >
               Odkryj Więcej
