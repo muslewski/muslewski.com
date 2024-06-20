@@ -115,10 +115,9 @@ function Contact() {
       <div className="self-start mb-10">
         <Lottie options={contactAnimation} height={180} width={200} />
       </div>
-      <Subtitle>
-        Zapraszam do kontaktu!
-        <GradientLine />
-      </Subtitle>
+      <Subtitle>Zapraszam do kontaktu!</Subtitle>
+      <GradientLine />
+
       <Brief>
         Jeśli masz pytania, chcesz omówić projekt lub nawiązać współpracę, bez
         wahania wypełnij poniższy formularz.

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Settings from "./components/settings/Settings";
 import Wrapper from "./components/Wrapper/Wrapper";
-import WelcomeSection from "./components/1SectionHero/Welcome";
+import Welcome from "./components/1SectionHero/Welcome";
 import Introduction from "./components/2SectionIntroduction/Introduction";
 import Projects from "./components/3SectionProjects/Projects";
 import Tools from "./components/4SectionTools/Tools";
@@ -15,10 +15,10 @@ function App() {
   const [primaryColor, setPrimaryColor] = useState("pink");
 
   return (
-    <div className="flex flex-col items-start bg-white w-full">
+    <div className="flex flex-col bg-white w-full">
       <Wrapper primaryColor={primaryColor} />
       {/* <Settings /> */}
-      <WelcomeSection />
+      <Welcome />
       <Introduction />
       <Projects />
       <Tools />

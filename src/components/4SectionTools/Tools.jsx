@@ -16,10 +16,9 @@ import Brief from "../Shared/Brief";
 function Tools() {
   return (
     <Section id="technologie" className="pt-40">
-      <Subtitle>
-        Technologie, których używam
-        <GradientLine />
-      </Subtitle>
+      <Subtitle>Technologie, których używam</Subtitle>
+      <GradientLine />
+
       {/* <Brief>Mój arsenał technologiczny - moje ulubione zabawki.</Brief> */}
       <Brief>Mój arsenał technologiczny jest do Twojej dyspozycji!</Brief>
 

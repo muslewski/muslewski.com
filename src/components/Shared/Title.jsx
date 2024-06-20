@@ -8,7 +8,7 @@ function Title({ children, className, ...props }) {
   return (
     <h1
       ref={ref}
-      className={`font-title text-secondary text-4xl text-center mt-7 leading-normal 
+      className={`font-title text-secondary text-4xl lg:text-6xl text-center mt-7 leading-normal lg:leading-normal 
         transition-opacity ease-in  duration-1000 ${
           isVisible ? "opacity-100" : "opacity-0"
         } ${className}`}

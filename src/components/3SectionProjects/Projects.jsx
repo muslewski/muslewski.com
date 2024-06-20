@@ -32,10 +32,8 @@ function Projects() {
   return (
     <>
       <Section id="projekty" className="pt-40">
-        <Subtitle>
-          Projekty
-          <GradientLine />
-        </Subtitle>
+        <Subtitle>Projekty</Subtitle>
+        <GradientLine />
         <Brief>
           Rzuć okiem na moje portfolio. <br />
           Mam nadzieję, że Cię zaintryguje!

@@ -15,10 +15,9 @@ function Education() {
   const isVisible = useIsVisible(ref, true);
   return (
     <Section id="edukacja" className="pt-40">
-      <Subtitle>
-        Edukacja
-        <GradientLine />
-      </Subtitle>
+      <Subtitle>Edukacja</Subtitle>
+      <GradientLine />
+
       {/* <Brief>
         Dyplom? Fajnie, ale co dalej? Moja prawdziwa edukacja to ciągła nauka i
         zdobywanie doświadczenia w realnych projektach.
