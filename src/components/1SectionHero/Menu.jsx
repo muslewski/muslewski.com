@@ -16,37 +16,38 @@ function Menu() {
       <li className="animate-fade-down animate-duration-500 lg:hidden xl:flex">
         <img src={logo} alt="" />
       </li>
+      <ul className="flex gap-28">
+        <MenuItem
+          href="#projekty"
+          icon={puzzle}
+          className="hidden animate-delay-[50ms]"
+        >
+          Projekty
+        </MenuItem>
+        <MenuItem
+          href="#technologie"
+          icon={tool}
+          className="hidden animate-delay-[100ms]"
+        >
+          Technologie
+        </MenuItem>
+        <MenuItem
+          href="#edukacja"
+          icon={graduation}
+          className=" hidden animate-delay-[150ms]"
+        >
+          Edukacja
+        </MenuItem>
 
-      <MenuItem
-        href="#projekty"
-        icon={puzzle}
-        className="hidden animate-delay-[50ms]"
-      >
-        Projekty
-      </MenuItem>
-      <MenuItem
-        href="#technologie"
-        icon={tool}
-        className="hidden animate-delay-[100ms]"
-      >
-        Technologie
-      </MenuItem>
-      <MenuItem
-        href="#edukacja"
-        icon={graduation}
-        className=" hidden animate-delay-[150ms]"
-      >
-        Edukacja
-      </MenuItem>
-
-      <MenuItem icon={translation} className="hidden animate-delay-[200ms]">
-        PL
-        <img src={buttonArrow} className="h-2" alt="" />
-      </MenuItem>
-      <MenuItem icon={moon} className="hidden animate-delay-[250ms]">
-        Ciemny
-        <img src={buttonArrow} className="h-2" alt="" />
-      </MenuItem>
+        <MenuItem icon={translation} className="hidden animate-delay-[200ms]">
+          PL
+          <img src={buttonArrow} className="h-2" alt="" />
+        </MenuItem>
+        <MenuItem icon={moon} className="hidden animate-delay-[250ms]">
+          Ciemny
+          <img src={buttonArrow} className="h-2" alt="" />
+        </MenuItem>
+      </ul>
       <MenuItem
         href="#kontakt"
         icon={hire}
