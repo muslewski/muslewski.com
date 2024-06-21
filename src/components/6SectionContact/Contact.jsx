@@ -112,8 +112,8 @@ function Contact() {
 
   return (
     <Section className="pt-36 lg:pt-56 justify-start max-w-7xl" id="kontakt">
-      <div className="self-start mb-10">
-        <Lottie options={contactAnimation} height={180} width={200} />
+      <div className="self-start mb-10 w-48 h-40 lg:w-80 lg:h-72">
+        <Lottie options={contactAnimation} />
       </div>
       <Subtitle>Zapraszam do kontaktu!</Subtitle>
       <GradientLine />
@@ -161,8 +161,8 @@ function Contact() {
           Wyślij
         </Button>
         {isSend && (
-          <div className="fixed z-40 top-10 right-1/2 translate-x-1/2 pointer-events-none">
-            <Lottie options={messageAnimation} width={350} />
+          <div className="fixed z-40 top-10 right-1/2 translate-x-1/2 pointer-events-none w-80 lg:w-1/4 lg:top-1/4 lg:right-1/4">
+            <Lottie options={messageAnimation} />
           </div>
         )}
       </form>
