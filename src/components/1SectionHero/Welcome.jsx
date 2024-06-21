@@ -13,10 +13,10 @@ import Brief from "../Shared/Brief";
 
 function WelcomeSection({ setTheme, theme }) {
   return (
-    <Section className="relative ">
+    <Section className="relative items-center">
       <Menu setTheme={setTheme} theme={theme} />
-      <div className="flex flex-col lg:flex-row-reverse justify-between w-full max-w-7xl items-center lg:h-screen ">
-        <div className="h-80 lg:pr-16 lg:pb-16 lg:h-3/5 relative flex justify-center ">
+      <div className="flex flex-col lg:flex-row-reverse justify-center pt-10 lg:pt-0 lg:justify-between w-full max-w-7xl items-center min-h-[90vh] lg:h-screen ">
+        <div className="h-80 lg:pr-16 lg:pb-16 lg:h-3/5 relative flex justify-center">
           <img
             className="h-full relative z-20 object-contain"
             src={fota}

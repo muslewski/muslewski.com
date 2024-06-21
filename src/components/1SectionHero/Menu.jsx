@@ -1,6 +1,7 @@
 import logo from "../../assets/Logo.svg";
 import logoDark from "../../assets/logoDark.svg";
 import hamburger from "../../assets/Hamburger.svg";
+import hamburgerDark from "../../assets/HamburgerDark.svg";
 import MenuItem from "./MenuItem";
 
 import hire from "../../assets/hire.svg";
@@ -18,8 +19,8 @@ import buttonArrow from "../../assets/buttonArrow.svg";
 
 function Menu({ setTheme, theme }) {
   return (
-    <menu className="flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32 w-full font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl lg:fixed lg:w-10/12 z-40">
-      <li className="animate-fade-down animate-duration-500 ">
+    <menu className=" flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl fixed w-9/12 lg:w-10/12 z-40">
+      <li className="animate-fade-down animate-duration-500 dark:bg-background/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent p-3 rounded-2xl">
         <a href="#">
           <img src={theme === "dark" ? logoDark : logo} alt="" />
         </a>
@@ -67,10 +68,19 @@ function Menu({ setTheme, theme }) {
       <MenuItem
         href="#kontakt"
         icon={hire}
-        className="animate-delay-[300ms] flex text-2xl lg:text-white lg:bg-gradient-to-bl lg:from-secondary lg:to-[#273aa5] rounded-md"
+        className="animate-delay-[300ms] hidden lg:flex text-2xl lg:text-white lg:bg-gradient-to-bl lg:from-secondary lg:to-[#273aa5] rounded-md"
         classNameA="px-4 py-1 hover:py-2 hover:px-5"
       >
         Zatrudnij
+      </MenuItem>
+      <MenuItem
+        className="flex lg:hidden dark:bg-background/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent py-6 px-4 rounded-2xl "
+        onClick={() => {
+          console.log("click");
+        }}
+      >
+        {" "}
+        <img src={theme === "dark" ? hamburgerDark : hamburger} alt="" />
       </MenuItem>
     </menu>
   );

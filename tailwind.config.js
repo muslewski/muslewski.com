@@ -12,11 +12,13 @@ export default {
         },
         secondary: {
           DEFAULT: "#0D005B", // Primary color
-          light: "#6cb2eb", // Light variant
-          dark: "#050215", // Dark variant
+          light: "#FFF", // Light variant
+          light2: "#FAFCFF", // Light variant
+          dark: "#03020E", // Dark variant
+          dark2: "#000C35", // Dark variant
         },
         background: {
-          DEFAULT: "#181D2B",
+          DEFAULT: "#171920",
         },
         accent: {
           DEFAULT: "#2400FF",

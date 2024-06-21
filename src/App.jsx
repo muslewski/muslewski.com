@@ -16,7 +16,7 @@ function App() {
   const [theme, setTheme] = useTheme();
 
   return (
-    <div className="flex flex-col bg-white  dark:bg-secondary-dark w-full">
+    <div className="flex flex-col bg-gradient-to-br from-secondary-light to-secondary-light2 dark:from-secondary-dark dark:to-secondary-dark2 w-full">
       <Wrapper theme={theme} />
       {/* <Settings /> */}
       <Welcome setTheme={setTheme} theme={theme} />

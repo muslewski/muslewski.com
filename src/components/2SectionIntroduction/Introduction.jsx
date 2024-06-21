@@ -29,7 +29,7 @@ function Introduction() {
 
   return (
     <Section
-      className="pt-24 lg:pt-0  justify-start max-w-7xl"
+      className="pt-12 lg:pt-0  justify-start max-w-7xl"
       id="wprowadzenie"
     >
       <span className="self-start relative flex gap-1 lg:gap-12 items-center w-full font-title text-3xl">
