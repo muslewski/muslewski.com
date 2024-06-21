@@ -15,12 +15,12 @@ import Button from "../Shared/Button";
 import Section from "../Shared/Section";
 import ProjectCard from "./ProjectCard";
 
-import { useState, useRef } from "react";
+import { useState, useRef, forwardRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
 import GradientLine from "../Shared/GradientLine";
 import Brief from "../Shared/Brief";
 
-function Projects() {
+const Projects = forwardRef(function Projects(props, refProjects) {
   const ref1 = useRef();
   const isVisible1 = useIsVisible(ref1, true);
 
@@ -30,8 +30,8 @@ function Projects() {
   const ref3 = useRef();
   const isVisible3 = useIsVisible(ref3, true);
   return (
-    <>
-      <Section id="projekty" className="pt-40 lg:pt-60 justify-start max-w-7xl">
+    <Section id="projekty" className="pt-40 lg:pt-60 justify-start max-w-7xl">
+      <div ref={refProjects} className="bg-red-300">
         <Subtitle>Projekty</Subtitle>
         <GradientLine />
         <Brief>
@@ -121,9 +121,9 @@ function Projects() {
             </Button>
           </div>
         </div>
-      </Section>
-    </>
+      </div>
+    </Section>
   );
-}
+});
 
 export default Projects;

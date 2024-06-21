@@ -15,10 +15,10 @@ export default {
           light: "#FFF", // Light variant
           light2: "#FAFCFF", // Light variant
           dark: "#03020E", // Dark variant
-          dark2: "#000C35", // Dark variant
+          dark2: "#000A2B", // Dark variant
         },
         background: {
-          DEFAULT: "#171920",
+          DEFAULT: "#0D0E13",
         },
         accent: {
           DEFAULT: "#2400FF",
