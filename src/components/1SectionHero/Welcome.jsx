@@ -5,15 +5,16 @@ import fotaBefore from "../../assets/fotaBefore.svg";
 import fotaRaw from "../../assets/fota_raw.jpg";
 import person from "../../assets/person.png";
 import arrow from "../../assets/Arrow.svg";
+import arrowDark from "../../assets/arrowDark.svg";
 import Menu from "./Menu";
 import Title from "../Shared/Title";
 import Section from "../Shared/Section";
 import Brief from "../Shared/Brief";
 
-function WelcomeSection() {
+function WelcomeSection({ setTheme, theme }) {
   return (
     <Section className="relative ">
-      <Menu />
+      <Menu setTheme={setTheme} theme={theme} />
       <div className="flex flex-col lg:flex-row-reverse justify-between w-full max-w-7xl items-center lg:h-screen ">
         <div className="h-80 lg:pr-16 lg:pb-16 lg:h-3/5 relative flex justify-center ">
           <img
@@ -41,8 +42,8 @@ function WelcomeSection() {
 
           <a href="#wprowadzenie">
             <img
-              className="mt-10 lg:w-7 lg:relative lg:top-12 animate-bounce animate-infinite animate-duration-[1500ms] animate-delay-500 animate-ease-in-out"
-              src={arrow}
+              className="mt-10 w-5 lg:w-7 lg:relative lg:top-12 animate-bounce animate-infinite animate-duration-[1500ms] animate-delay-500 animate-ease-in-out"
+              src={theme === "dark" ? arrowDark : arrow}
               alt=""
             />
           </a>

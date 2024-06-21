@@ -1,10 +1,12 @@
 import Section from "../Shared/Section";
 import Subtitle from "../Shared/Subtitle";
 import ToolCard from "./ToolCard";
+import useTheme from "../../helpers/useTheme";
 
 import react from "../../assets/logos/react.png";
 import node from "../../assets/logos/node.png";
 import express from "../../assets/logos/express.png";
+import expressDark from "../../assets/logos/expressDark.png";
 import postgres from "../../assets/logos/postgres.png";
 import typescript from "../../assets/logos/typescript.png";
 import js from "../../assets/logos/js.png";
@@ -15,8 +17,9 @@ import git from "../../assets/logos/git.png";
 import figma from "../../assets/logos/figma.png";
 import GradientLine from "../Shared/GradientLine";
 import Brief from "../Shared/Brief";
+import { useEffect, useState } from "react";
 
-function Tools() {
+function Tools({ theme }) {
   return (
     <Section
       id="technologie"
@@ -28,7 +31,7 @@ function Tools() {
       {/* <Brief>Mój arsenał technologiczny - moje ulubione zabawki.</Brief> */}
       <Brief>Mój arsenał technologiczny jest do Twojej dyspozycji!</Brief>
 
-      <ul className="mt-20 flex flex-wrap w-full gap-10 lg:gap-16 justify-start font-description text-xl text-center font-medium">
+      <ul className="mt-20 flex flex-wrap w-full gap-10 text-secondary-dark dark:text-gray-50 lg:gap-16 justify-start font-description text-xl text-center font-medium">
         <ToolCard
           title="React"
           logo={react}
@@ -45,7 +48,7 @@ function Tools() {
         />
         <ToolCard
           title="Express"
-          logo={express}
+          logo={theme === "dark" ? expressDark : express}
           level={4}
           col1="#9933ff"
           col2="rgb(64, 0, 128, 0.2)"

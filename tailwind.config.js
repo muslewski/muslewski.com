@@ -8,12 +8,15 @@ export default {
         primary: {
           DEFAULT: "#3490dc", // Primary color
           light: "#6cb2eb", // Light variant
-          dark: "#2779bd", // Dark variant
+          dark: "#B4C9FF", // Dark variant
         },
         secondary: {
           DEFAULT: "#0D005B", // Primary color
           light: "#6cb2eb", // Light variant
-          dark: "#2779bd", // Dark variant
+          dark: "#050215", // Dark variant
+        },
+        background: {
+          DEFAULT: "#181D2B",
         },
         accent: {
           DEFAULT: "#2400FF",

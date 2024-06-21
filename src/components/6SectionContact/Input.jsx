@@ -19,7 +19,7 @@ const Input = forwardRef(
 
     let type = inputType || "text";
     const classStyling =
-      "w-full max-w-3xl p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description outline-blue-600";
+      "w-full max-w-3xl p-2 my-2 border-secondary/10 border-2 text-xl rounded-lg font-description dark:bg-white outline-blue-600";
 
     return (
       <label
@@ -28,7 +28,7 @@ const Input = forwardRef(
           isVisible ? "animate-fade-up" : ""
         }`}
       >
-        <span className="font-title text-xl font-medium text-secondary">
+        <span className="font-title text-xl font-medium text-secondary dark:text-white">
           {title}
         </span>
         {textarea ? (
@@ -52,7 +52,7 @@ const Input = forwardRef(
         )}
 
         {errorText.length > 0 && (
-          <span className="font-description text-xl font-medium text-blue-900">
+          <span className="font-description text-xl font-medium text-blue-900 dark:text-blue-100">
             {errorText}
           </span>
         )}

@@ -20,30 +20,30 @@ function Settings() {
 
   return (
     <div className="flex flex-col gap-5 w-fit">
-      <Button
+      <SettingsButton
         playSound={playSound}
         onClick={() => changeLanguage(language === "pl" ? "en" : "pl")}
       >
         {t("TranslationButton")}
-      </Button>
+      </SettingsButton>
 
-      <Button
+      <SettingsButton
         playSound={playSound}
         onClick={() => {
           setTheme(theme === "dark" ? "light" : "dark");
         }}
       >
         Change to {theme === "dark" ? "light" : "dark"}
-      </Button>
+      </SettingsButton>
 
-      <Button
+      <SettingsButton
         onClick={() => {
           toggleSound();
           if (soundEnabled != "on") initialSound(initialSoundWav);
         }}
       >
         {soundEnabled === "on" ? "Disable Sound" : "Enable Sound"}
-      </Button>
+      </SettingsButton>
     </div>
   );
 }

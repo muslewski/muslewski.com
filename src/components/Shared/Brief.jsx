@@ -8,7 +8,7 @@ function Brief({ children, className, ...props }) {
   return (
     <h3
       ref={ref}
-      className={`font-description text-xl lg:text-2xl leading-normal font-medium text-secondary max-w-3xl w-fit self-start animate-duration-[1500ms] animate-ease-out ${
+      className={`font-description text-xl lg:text-2xl leading-normal font-medium text-secondary dark:text-white max-w-3xl w-fit self-start animate-duration-[1500ms] animate-ease-out ${
         isVisible ? "animate-fade-right" : "opacity-0"
       } ${className}`}
       {...props}

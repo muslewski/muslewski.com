@@ -9,19 +9,20 @@ import Tools from "./components/4SectionTools/Tools";
 import Education from "./components/5SectionEducation/Education";
 import Contact from "./components/6SectionContact/Contact";
 import Footer from "./components/7SectionFooter/Footer";
+import useTheme from "./helpers/useTheme";
 
 function App() {
   const { t, i18n } = useTranslation();
-  const [primaryColor, setPrimaryColor] = useState("pink");
+  const [theme, setTheme] = useTheme();
 
   return (
-    <div className="flex flex-col bg-white w-full">
-      <Wrapper primaryColor={primaryColor} />
+    <div className="flex flex-col bg-white  dark:bg-secondary-dark w-full">
+      <Wrapper theme={theme} />
       {/* <Settings /> */}
-      <Welcome />
+      <Welcome setTheme={setTheme} theme={theme} />
       <Introduction />
       <Projects />
-      <Tools />
+      <Tools theme={theme} />
       <Education />
       <Contact />
       <Footer />

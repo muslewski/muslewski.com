@@ -9,7 +9,7 @@ import GradientLine from "../Shared/GradientLine";
 function Footer() {
   return (
     <Section className="pt-32 lg:pt-52 justify-start max-w-7xl">
-      <footer className="flex flex-col w-full font-description text-secondary text-xl lg:text-2xl text-center font-medium">
+      <footer className="flex flex-col w-full font-description text-secondary dark:text-white text-xl lg:text-2xl text-center font-medium">
         <ul className="mb-10 flex flex-col gap-16 w-full py-2 justify-start items-start text-left">
           <li>
             <a href="mailto:mateusz.mus@pm.me">

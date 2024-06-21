@@ -56,7 +56,7 @@ function ProjectCard({
       </div>
 
       {open && (
-        <p className="mt-10 font-description text-xl animate-ease-out animate-duration-1000 animate-fade-right">
+        <p className="mt-10 font-description text-secondary-dark dark:text-gray-50 text-xl animate-ease-out animate-duration-1000 animate-fade-right">
           {paragraph}
           <Button
             tag="a"

@@ -43,7 +43,7 @@ function Introduction() {
       </span>
       <GradientLine />
 
-      <p className="font-description text-xl lg:text-2xl mb-10 leading-normal max-w-3xl self-start">
+      <p className="font-description text-secondary dark:text-blue-100 text-xl lg:text-2xl mb-10 leading-normal max-w-3xl self-start">
         Uwielbiam tworzyć nowoczesne strony i aplikacje internetowe.
         <br />
         <b className="inline-block font-semibold my-3">
