@@ -39,7 +39,7 @@ function Tools() {
         <ToolCard
           title="Node"
           logo={node}
-          level={3}
+          level={2}
           col1="#00cc66"
           col2="rgb(0, 102, 61, 0.2)"
         />
@@ -53,7 +53,7 @@ function Tools() {
         <ToolCard
           title="Postgres"
           logo={postgres}
-          level={3}
+          level={2}
           col1="#0099cc"
           col2="rgb(0, 77, 102, 0.2)"
         />
@@ -67,7 +67,7 @@ function Tools() {
         <ToolCard
           title="JavaScript"
           logo={js}
-          level={2}
+          level={3}
           col1="#e2cb1e"
           col2="rgb(113, 101, 15, 0.2)"
           className="hidden lg:flex"
@@ -75,7 +75,7 @@ function Tools() {
         <ToolCard
           title="HTML"
           logo={html}
-          level={2}
+          level={5}
           col1="#e2701e"
           col2="rgb(135, 67, 18, 0.2)"
           className="hidden lg:flex"
@@ -83,7 +83,7 @@ function Tools() {
         <ToolCard
           title="CSS"
           logo={css}
-          level={2}
+          level={4}
           col1="#1e5ce2"
           col2="rgb(15, 46, 113, 0.2)"
           className="hidden lg:flex"

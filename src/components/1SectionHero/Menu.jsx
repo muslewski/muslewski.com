@@ -12,7 +12,7 @@ import buttonArrow from "../../assets/buttonArrow.svg";
 
 function Menu() {
   return (
-    <menu className="flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32 w-full font-description text-secondary tracking-wide font-bold md:text-lg xl:text-2xl lg:fixed lg:w-10/12 z-50">
+    <menu className="flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32 w-full font-description text-secondary tracking-wide font-bold md:text-lg xl:text-2xl lg:fixed lg:w-10/12 z-40">
       <li className="animate-fade-down animate-duration-500 ">
         <img src={logo} alt="" />
       </li>

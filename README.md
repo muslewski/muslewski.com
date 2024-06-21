@@ -33,3 +33,4 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 - Good Switch buttons for languages and color themes
   destination_dir: muslewski
 - Play with wrapper to make it interactive (different colors shapes, etc)
+- Navigation select current active Section
