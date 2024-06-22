@@ -6,6 +6,7 @@ import hamburgerDark from "../../assets/HamburgerDark.svg";
 import MenuItem from "./MenuItem";
 
 import settingsIcon from "../../assets/settingsIcon.svg";
+import settingsIconDark from "../../assets/settingsIconDark.svg";
 import hire from "../../assets/hire.svg";
 import puzzle from "../../assets/puzzle.svg";
 import puzzleDark from "../../assets/puzzleDark.svg";
@@ -18,21 +19,90 @@ import translationDark from "../../assets/translationDark.svg";
 import moon from "../../assets/Moon.svg";
 import sun from "../../assets/sun.svg";
 import buttonArrow from "../../assets/buttonArrow.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Menu({ setTheme, theme }) {
   const [openSettings, setOpenSettings] = useState(null);
+  const openSettingsRef = useRef();
 
-  const [animationClass, setAnimationClass] = useState("hidden");
+  // Latest status of openSettings.
+  openSettingsRef.current = openSettings;
 
+  // By default animation is hidden
+  const [animationClass, setAnimationClass] = useState("xl:hidden 2xl:flex");
+
+  // Logic for animation of settings (Jump in / out)
   useEffect(() => {
-    console.log("test");
+    let timeout;
+
     if (openSettings === true) {
-      setAnimationClass("animate-jump-in");
+      setAnimationClass("animate-jump-in  2xl:flex");
     } else if (openSettings === false) {
-      setAnimationClass("animate-jump-out");
+      setAnimationClass("animate-jump-out 2xl:flex");
+      // Make sure that we will not see jump out animation after it is already disabled
+      timeout = setTimeout(() => {
+        setAnimationClass("xl:hidden 2xl:flex");
+      }, 1000);
     }
+
+    // Clear timeout
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
   }, [openSettings]);
+
+  // Logic of hiding settings in multiple ways
+  const useOutsideClick = (callback) => {
+    const ref = useRef();
+
+    useEffect(() => {
+      // Click Outside
+      const handleClick = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          callback();
+        }
+      };
+
+      // Escape
+      const handleKeyDown = (event) => {
+        if (event.key === "Escape") {
+          callback();
+        }
+      };
+
+      // Scroll
+      const handleScroll = () => {
+        callback();
+      };
+
+      document.addEventListener("click", handleClick);
+      document.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        document.removeEventListener("click", handleClick);
+        document.removeEventListener("keydown", handleKeyDown);
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, [ref]);
+
+    return ref;
+  };
+
+  // Hide settings if visible
+  const handleClickOutside = () => {
+    if (openSettingsRef.current === true) setOpenSettings(false);
+  };
+
+  // Do nothing when clicked on children elements
+  const handleMenuClick = (event) => {
+    event.stopPropagation();
+  };
+
+  // Ref for setting button
+  const refSettings = useOutsideClick(handleClickOutside);
 
   return (
     <menu className=" flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl fixed w-9/12 lg:w-10/12 z-40">
@@ -66,16 +136,17 @@ function Menu({ setTheme, theme }) {
         >
           Edukacja
         </MenuItem>
-        <li className="relative">
+        <li className="relative" onClick={handleMenuClick}>
           <img
-            src={settingsIcon}
-            className="h-11 2xl:hidden"
+            src={theme === "dark" ? settingsIconDark : settingsIcon}
+            className="h-11 2xl:hidden cursor-pointer"
             alt=""
             onClick={() => setOpenSettings((prev) => !prev)}
+            ref={refSettings}
           />
           <ul
             className={`absolute 2xl:static flex justify-between gap-24 2xl:gap-20 2xl:p-0 2xl:shadow-transparent 2xl:bg-transparent 2xl:dark:bg-transparent -bottom-24 right-0
-           bg-white dark:bg-secondary-dark px-12 py-3 rounded-2xl shadow-md shadow-secondary/10 2xl:animate-jump animate-duration-500 animate-ease-in-out  ${animationClass}`}
+           bg-white dark:bg-secondary-dark px-12 py-3 rounded-2xl shadow-md shadow-secondary/10 2xl:animate-jump xl:animate-duration-500 xl:animate-ease-in-out  ${animationClass}`}
           >
             <MenuItem
               icon={theme === "dark" ? moon : sun}
