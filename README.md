@@ -1,4 +1,4 @@
-Website here [Click](https://kentodecem.github.io/muslewski/)
+Website here [Click](https://muslewski.com)
 
 # TODO:
 
