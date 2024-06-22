@@ -150,7 +150,7 @@ function Menu({ setTheme, theme }) {
           >
             <MenuItem
               icon={theme === "dark" ? moon : sun}
-              className="animate-delay-[250ms]"
+              className="2xl:animate-delay-[200ms]"
               onClick={() => {
                 setTheme(theme === "dark" ? "light" : "dark");
               }}
@@ -160,7 +160,7 @@ function Menu({ setTheme, theme }) {
             </MenuItem>
             <MenuItem
               icon={theme === "dark" ? translationDark : translation}
-              className="animate-delay-[200ms]"
+              className="2xl:animate-delay-[250ms]"
             >
               PL
               {/* <img src={buttonArrow} className="h-2" alt="" /> */}
