@@ -1,4 +1,3 @@
-import "./Menu.css";
 import logo from "../../assets/Logo.svg";
 import logoDark from "../../assets/logoDark.svg";
 import hamburger from "../../assets/Hamburger.svg";
@@ -20,8 +19,9 @@ import moon from "../../assets/Moon.svg";
 import sun from "../../assets/sun.svg";
 import buttonArrow from "../../assets/buttonArrow.svg";
 import { useState, useEffect, useRef } from "react";
+import AnimatedHr from "./AnimatedHr";
 
-function Menu({ setTheme, theme }) {
+function Menu({ setTheme, theme, hrLeft = "" }) {
   const [openSettings, setOpenSettings] = useState(null);
   const openSettingsRef = useRef();
 
@@ -111,17 +111,16 @@ function Menu({ setTheme, theme }) {
           <img src={theme === "dark" ? logoDark : logo} alt="" />
         </a>
       </li>
-      <ul className="hidden xl:flex gap-20 bg-white/90 dark:bg-secondary-dark/90 lg:py-3 lg:px-7 mx-6 lg:rounded-2xl shadow-md shadow-secondary/5">
-        <div className="relative">
-          <MenuItem
-            href="#projekty"
-            icon={theme === "dark" ? puzzleDark : puzzle}
-            className="animate-delay-[50ms]"
-          >
-            Projekty
-          </MenuItem>
-          <hr className="absolute -bottom-1 w-1/2 h-1 rounded-full bg-secondary border-0" />
-        </div>
+      <ul className="relative hidden xl:flex gap-20 bg-white/90 dark:bg-secondary-dark/90 lg:py-3 lg:px-7 mx-6 lg:rounded-2xl shadow-md shadow-secondary/5">
+        <AnimatedHr hrLeft={hrLeft} />
+
+        <MenuItem
+          href="#projekty"
+          icon={theme === "dark" ? puzzleDark : puzzle}
+          className="animate-delay-[50ms]"
+        >
+          Projekty
+        </MenuItem>
         <MenuItem
           href="#technologie"
           icon={theme === "dark" ? toolDark : tool}

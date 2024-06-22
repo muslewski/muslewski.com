@@ -31,14 +31,11 @@ const Projects = forwardRef(function Projects(props, refProjects) {
   const isVisible3 = useIsVisible(ref3, true);
   return (
     <Section id="projekty" className="pt-40 lg:pt-60 max-w-7xl">
-      <div
-        ref={refProjects}
-        className="bg-red-300  self-start w-full flex flex-col"
-      >
+      <div ref={refProjects} className="self-start w-full flex flex-col">
         <Subtitle>Projekty</Subtitle>
         <GradientLine />
         <Brief>
-          <span className="flex lg:inline">Rzuć okiem na moje portfolio.</span>{" "}
+          <span className="flex lg:inline">Rzuć okiem na moje portfolio.</span>
           Mam nadzieję, że Cię zaintryguje!
         </Brief>
 

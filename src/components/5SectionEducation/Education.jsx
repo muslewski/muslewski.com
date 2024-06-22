@@ -15,10 +15,7 @@ const Education = forwardRef(function Education(props, refEducation) {
   const isVisible = useIsVisible(ref, true);
   return (
     <Section id="edukacja" className="pt-40 lg:pt-60 max-w-7xl">
-      <div
-        ref={refEducation}
-        className="bg-emerald-300 self-start w-full flex flex-col"
-      >
+      <div ref={refEducation} className="self-start w-full flex flex-col">
         <Subtitle>Edukacja</Subtitle>
         <GradientLine />
 

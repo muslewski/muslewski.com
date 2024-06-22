@@ -2,6 +2,7 @@ import React from "react";
 
 import fota from "../../assets/fota.png";
 import fotaBefore from "../../assets/fotaBefore.svg";
+import fotaBeforeDark from "../../assets/fotaBeforeDark.svg";
 import fotaRaw from "../../assets/fota_raw.jpg";
 import person from "../../assets/person.png";
 import arrow from "../../assets/Arrow.svg";
@@ -11,10 +12,10 @@ import Title from "../Shared/Title";
 import Section from "../Shared/Section";
 import Brief from "../Shared/Brief";
 
-function WelcomeSection({ setTheme, theme }) {
+function WelcomeSection({ setTheme, theme, hrLeft }) {
   return (
     <Section className="relative items-center max-w-7xl">
-      <Menu setTheme={setTheme} theme={theme} />
+      <Menu setTheme={setTheme} theme={theme} hrLeft={hrLeft} />
       <div className="flex flex-col lg:flex-row-reverse lg:gap-12 justify-center pt-10 lg:pt-0 lg:px-12 2xl:px-0  2xl:justify-between w-full max-w-7xl items-center min-h-[90vh] lg:h-screen ">
         <div className="h-80 lg:pr-16 lg:pb-16 lg:h-3/5 relative flex justify-center ">
           <img
@@ -24,7 +25,7 @@ function WelcomeSection({ setTheme, theme }) {
           />
           <img
             className=" hidden lg:flex absolute h-3/4 w-3/4 -bottom-10 xl:-bottom-16 right-0 z-0"
-            src={fotaBefore}
+            src={theme === "dark" ? fotaBeforeDark : fotaBefore}
             alt=""
           />
         </div>

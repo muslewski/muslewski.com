@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useIsVisible } from "./helpers/useIsVisible";
 
@@ -18,34 +18,34 @@ function App() {
   const [theme, setTheme] = useTheme();
 
   const [visibleSections, setVisibleSections] = useState({
-    Introduction: false,
     Projects: false,
     Tools: false,
     Education: false,
   });
 
+  const prevVisibleSections = useRef(visibleSections);
+
   const refs = {
-    Introduction: useRef(),
     Projects: useRef(),
     Tools: useRef(),
     Education: useRef(),
   };
 
   const isVisible = {
-    Introduction: useIsVisible(refs.Introduction, false),
     Projects: useIsVisible(refs.Projects, false),
     Tools: useIsVisible(refs.Tools, false),
     Education: useIsVisible(refs.Education, false),
   };
 
-  console.log(visibleSections);
-
   useEffect(() => {
-    setVisibleSections({
-      Introduction: isVisible.Introduction,
-      Projects: isVisible.Projects,
-      Tools: isVisible.Tools,
-      Education: isVisible.Education,
+    setVisibleSections((prevSections) => {
+      prevVisibleSections.current = prevSections;
+      return {
+        Introduction: isVisible.Introduction,
+        Projects: isVisible.Projects,
+        Tools: isVisible.Tools,
+        Education: isVisible.Education,
+      };
     });
   }, [
     isVisible.Introduction,
@@ -54,12 +54,30 @@ function App() {
     isVisible.Education,
   ]);
 
+  const hrPositions = {
+    Projects: "w-52 left-[0.4rem] animate-jump-in",
+    Tools: "w-52 left-[14.5rem] animate-jump-in",
+    Education: "w-52 left-[30rem] animate-jump-in",
+  };
+
+  const hrLeft = useMemo(() => {
+    const prev = prevVisibleSections.current;
+    const current = visibleSections;
+
+    if (current.Projects) return hrPositions.Projects;
+    else if (current.Tools) return hrPositions.Tools;
+    else if (current.Education) return hrPositions.Education;
+
+    // Default case
+    return "animate-jump-out w-3/4"; // You can choose a default value here
+  }, [visibleSections]);
+
   return (
     <div className="flex flex-col bg-white dark:bg-background bg-gradient-to-br from-secondary-light to-secondary-light2 dark:from-secondary-dark dark:to-secondary-dark2 w-full">
       <Wrapper theme={theme} />
       {/* <Settings /> */}
-      <Welcome setTheme={setTheme} theme={theme} />
-      <Introduction ref={refs.Introduction} />
+      <Welcome setTheme={setTheme} theme={theme} hrLeft={hrLeft} />
+      <Introduction />
       <Projects ref={refs.Projects} />
       <Tools ref={refs.Tools} theme={theme} />
       <Education ref={refs.Education} />
