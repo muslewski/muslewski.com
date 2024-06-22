@@ -55,9 +55,9 @@ function App() {
   ]);
 
   const hrPositions = {
-    Projects: "w-52 left-[0.4rem] animate-jump-in",
-    Tools: "w-52 left-[14.5rem] animate-jump-in",
-    Education: "w-52 left-[30rem] animate-jump-in",
+    Projects: "opacity-100 w-52 left-[0.4rem] animate-jump-in",
+    Tools: "opacity-100 w-52 left-[14.5rem] animate-jump-in",
+    Education: "opacity-100 w-52 left-[30rem] animate-jump-in",
   };
 
   const hrLeft = useMemo(() => {
@@ -69,7 +69,7 @@ function App() {
     else if (current.Education) return hrPositions.Education;
 
     // Default case
-    return "animate-jump-out w-3/4"; // You can choose a default value here
+    return ""; // You can choose a default value here
   }, [visibleSections]);
 
   return (
