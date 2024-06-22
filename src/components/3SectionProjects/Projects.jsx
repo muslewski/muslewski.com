@@ -30,8 +30,11 @@ const Projects = forwardRef(function Projects(props, refProjects) {
   const ref3 = useRef();
   const isVisible3 = useIsVisible(ref3, true);
   return (
-    <Section id="projekty" className="pt-40 lg:pt-60 justify-start max-w-7xl">
-      <div ref={refProjects} className="bg-red-300">
+    <Section id="projekty" className="pt-40 lg:pt-60 max-w-7xl">
+      <div
+        ref={refProjects}
+        className="bg-red-300  self-start w-full flex flex-col"
+      >
         <Subtitle>Projekty</Subtitle>
         <GradientLine />
         <Brief>

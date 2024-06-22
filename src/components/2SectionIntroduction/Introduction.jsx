@@ -29,11 +29,11 @@ const Introduction = forwardRef(function Introduction(props, refIntroduction) {
   };
 
   return (
-    <Section
-      className="pt-12 lg:pt-0  justify-start max-w-7xl"
-      id="wprowadzenie"
-    >
-      <div ref={refIntroduction} className="bg-blue-200">
+    <Section className="pt-12 lg:pt-0 max-w-7xl" id="wprowadzenie">
+      <div
+        ref={refIntroduction}
+        className="bg-blue-200 self-start w-full flex flex-col"
+      >
         <span className="self-start relative flex gap-1 lg:gap-12 items-center w-full font-title text-3xl">
           <Subtitle className="z-10 relative -400 self-end flex flex-col lg:gap-2">
             <span className="font-description text-2xl lg:text-4xl">Jako</span>

@@ -13,6 +13,7 @@ import js from "../../assets/logos/js.png";
 import html from "../../assets/logos/html.png";
 import css from "../../assets/logos/css.png";
 import python from "../../assets/logos/python.png";
+import jiujitsu from "../../assets/logos/jiu-jitsu.png";
 import git from "../../assets/logos/git.png";
 import figma from "../../assets/logos/figma.png";
 import GradientLine from "../Shared/GradientLine";
@@ -21,11 +22,8 @@ import { forwardRef } from "react";
 
 const Tools = forwardRef(function Tools({ theme }, refTools) {
   return (
-    <Section
-      id="technologie"
-      className="pt-40 lg:pt-60 justify-start max-w-7xl"
-    >
-      <div ref={refTools} className="bg-red-300">
+    <Section id="technologie" className="pt-40 lg:pt-60 max-w-7xl bg-red-300">
+      <div ref={refTools} className=" self-start w-full flex flex-col">
         <Subtitle>Technologie, których używam</Subtitle>
         <GradientLine />
 
@@ -61,13 +59,13 @@ const Tools = forwardRef(function Tools({ theme }, refTools) {
             col1="#0099cc"
             col2="rgb(0, 77, 102, 0.2)"
           />
-          <ToolCard
+          {/* <ToolCard
             title="TypeScript"
             logo={typescript}
             level={0}
             col1="#0066cc"
             col2="rgb(0, 51, 102, 0.2)"
-          />
+          /> */}
           <ToolCard
             title="JavaScript"
             logo={js}
@@ -91,6 +89,14 @@ const Tools = forwardRef(function Tools({ theme }, refTools) {
             col1="#1e5ce2"
             col2="rgb(15, 46, 113, 0.2)"
             className="hidden lg:flex"
+          />
+          <ToolCard
+            title="Jiu-Jitsu"
+            logo={jiujitsu}
+            level={1}
+            col1="#a94b3c"
+            col2="rgb(94, 41, 33, 0.2)"
+            className=""
           />
           <ToolCard
             title="Python"
