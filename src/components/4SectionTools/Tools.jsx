@@ -22,8 +22,11 @@ import { forwardRef } from "react";
 
 const Tools = forwardRef(function Tools({ theme }, refTools) {
   return (
-    <Section id="technologie" className="pt-40 lg:pt-60 max-w-7xl bg-red-300">
-      <div ref={refTools} className=" self-start w-full flex flex-col">
+    <Section id="technologie" className="pt-40 lg:pt-60 max-w-7xl">
+      <div
+        ref={refTools}
+        className=" self-start w-full flex flex-col bg-red-300"
+      >
         <Subtitle>Technologie, których używam</Subtitle>
         <GradientLine />
 
