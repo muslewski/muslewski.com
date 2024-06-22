@@ -28,6 +28,7 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
 - Offline Mode
 - Chat GPT Helper
 - Audio Experience
+- Meme: terror on face when mobile version of website, shows horizontal scrolling.
 
 - Footer looks like trash. Make it look fancier.
 - React Router for (Contact, Subpages of projects (so that even when livelink will not work, it will be possible to see what is it all about))
@@ -35,4 +36,5 @@ Website here [Click](https://kentodecem.github.io/muslewski/)
   destination_dir: muslewski
 - Play with wrapper to make it interactive (different colors shapes, etc)
 - Navigation show current active Section
+- More padding-x for Welcome section (It can't touch the borders)
 - Hamburger has three lines right? Make it highlight current section. (Projects - first line slightly thicker, Tools - second line slightly thicker, etc..)
