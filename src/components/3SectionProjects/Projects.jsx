@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import pol_med from "../../assets/pol-med.png";
 import hammer from "../../assets/hammer.gif";
 import car from "../../assets/car.png";
@@ -21,6 +23,8 @@ import GradientLine from "../Shared/GradientLine";
 import Brief from "../Shared/Brief";
 
 const Projects = forwardRef(function Projects(props, refProjects) {
+  const { t, i18n } = useTranslation();
+
   const ref1 = useRef();
   const isVisible1 = useIsVisible(ref1, true);
 
@@ -32,11 +36,11 @@ const Projects = forwardRef(function Projects(props, refProjects) {
   return (
     <Section id="projekty" className="pt-40 lg:pt-60 max-w-7xl">
       <div ref={refProjects} className="self-start w-full flex flex-col">
-        <Subtitle>Projekty</Subtitle>
+        <Subtitle>{t("Projects")}</Subtitle>
         <GradientLine />
         <Brief>
-          <span className="flex lg:inline">Rzuć okiem na moje portfolio.</span>
-          Mam nadzieję, że Cię zaintryguje!
+          <span className="flex lg:inline">{t("TakeLook")} </span>
+          {t("Ihope")}
         </Brief>
 
         <div className="mt-20 flex flex-col lg:flex-row flex-wrap gap-20 lg:gap-24 items-end self-start justify-start ">
@@ -58,9 +62,7 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             }
             dots={dotsBlue}
             thumbnail={pol_med}
-            paragraph="Strona internetowa dla firmy Pol-Med, która oferuje nowoczesne stacje edukacyjne dla branży 
-            samochodowej, oleje posmażalnicze UCO oraz szeroki wybór narzędzi przemysłowych. Projekt zrealizowany w Node.js 
-            zapewnia łatwą nawigację i dostęp do bogatej oferty firmy."
+            paragraph={t("PolMed")}
           />
 
           <ProjectCard
@@ -81,9 +83,7 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             }
             dots={dotsGreen}
             thumbnail={kraina_psa}
-            paragraph="Strona internetowa dla salonu groomerskiego, umożliwiająca właścicielom zwierząt 
-            rezerwację wizyt na strzyżenie ich pupili. Stworzona w React i Tailwind CSS, strona oferuje 
-            szybkie i intuicyjne rezerwacje oraz nowoczesny design."
+            paragraph={t("KrainaPsa")}
           />
 
           <ProjectCard
@@ -104,9 +104,7 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             }
             dots={dotsPink}
             thumbnail={school}
-            paragraph="Oficjalna strona reprezentacyjna VII Liceum w Bydgoszczy. Wykonana przy użyciu React 
-            i Tailwind CSS, strona prezentuje informacje o szkole, wydarzeniach i osiągnięciach uczniów, jednocześnie 
-            zapewniając nowoczesny i atrakcyjny wygląd."
+            paragraph={t("VIILiceum")}
           />
 
           <div className="mt-6">
@@ -116,7 +114,7 @@ const Projects = forwardRef(function Projects(props, refProjects) {
               href="https://github.com/muslewski"
               target="_blank"
             >
-              Odkryj Więcej
+              {t("DiscoverMore")}
               <img className="w-12" src={github} alt="" />
             </Button>
           </div>

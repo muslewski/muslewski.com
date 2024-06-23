@@ -1,4 +1,5 @@
 import "./Introduction.css";
+import { useTranslation } from "react-i18next";
 
 import Lottie from "react-lottie";
 import astronautJson from "../../lotties/astronaut2.json";
@@ -9,6 +10,8 @@ import Button from "../Shared/Button";
 import GradientLine from "../Shared/GradientLine";
 
 function Introduction() {
+  const { t, i18n } = useTranslation();
+
   const astronaut = {
     loop: true,
     autoplay: true,
@@ -34,7 +37,9 @@ function Introduction() {
     >
       <span className="self-start relative flex gap-1 lg:gap-12 items-center w-full font-title text-3xl">
         <Subtitle className="z-10 relative -400 self-end flex flex-col lg:gap-2">
-          <span className="font-description text-2xl lg:text-4xl">Jako</span>
+          <span className="font-description text-2xl lg:text-4xl">
+            {t("As_a")}
+          </span>
           Full Stack Developer
         </Subtitle>
         <div className="pointer-events-none w-64 relative top-8 sm:top-10">
@@ -44,20 +49,12 @@ function Introduction() {
       <GradientLine />
 
       <p className="font-description text-secondary dark:text-blue-100 text-xl lg:text-2xl mb-10 leading-normal max-w-3xl self-start">
-        Uwielbiam tworzyć nowoczesne strony i aplikacje internetowe.
+        {t("Ilove")}
         <br />
-        <b className="inline-block font-semibold my-3">
-          Im trudniejszy projekt, tym lepiej!
-        </b>
+        <b className="inline-block font-semibold my-3">{t("HarderBetter")}</b>
         <br />
-        <span className="lg:hidden">
-          Chętnie zrealizuję Twój pomysł na imponującą stronę internetową, która
-          zachwyci klientów.
-        </span>
-        <span className="hidden lg:flex">
-          Współpracując ze mną, zyskasz technicznego eksperta i partnera, który
-          z pasją przekształca Twoje pomysły w rzeczywistość.
-        </span>
+        <span className="lg:hidden">{t("ClientGain2")}</span>
+        <span className="hidden lg:flex">{t("ClientGain")}</span>
       </p>
 
       <div className="self-start hover:scale-105 transition-transform flex flex-col cursor-pointer mt-6 lg:mt-12">
@@ -66,7 +63,7 @@ function Introduction() {
         </div>
 
         <Button className="rounded-tr-lg rounded-bl-lg rounded-br-more rounded-tl-more">
-          Więcej o mnie
+          {t("MoreAboutMe")}
         </Button>
       </div>
     </Section>

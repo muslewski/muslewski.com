@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import Section from "../Shared/Section";
 import Subtitle from "../Shared/Subtitle";
 import ToolCard from "./ToolCard";
@@ -21,14 +23,16 @@ import Brief from "../Shared/Brief";
 import { forwardRef } from "react";
 
 const Tools = forwardRef(function Tools({ theme }, refTools) {
+  const { t, i18n } = useTranslation();
+
   return (
     <Section id="technologie" className="pt-40 lg:pt-60 max-w-7xl">
       <div ref={refTools} className=" self-start w-full flex flex-col">
-        <Subtitle>Technologie, których używam</Subtitle>
+        <Subtitle>{t("ToolsIuse")}</Subtitle>
         <GradientLine />
 
         {/* <Brief>Mój arsenał technologiczny - moje ulubione zabawki.</Brief> */}
-        <Brief>Mój arsenał technologiczny jest do Twojej dyspozycji!</Brief>
+        <Brief>{t("Arsenal")}</Brief>
 
         <ul className="mt-20 flex flex-wrap w-full gap-10 text-secondary-dark dark:text-gray-50 lg:gap-16 justify-start font-description text-xl text-center font-medium">
           <ToolCard

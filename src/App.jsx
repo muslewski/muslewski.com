@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useMemo } from "react";
-import { useTranslation } from "react-i18next";
 import { useIsVisible } from "./helpers/useIsVisible";
 
 import Settings from "./components/settings/Settings";
@@ -14,7 +13,6 @@ import Footer from "./components/7SectionFooter/Footer";
 import useTheme from "./helpers/useTheme";
 
 function App() {
-  const { t, i18n } = useTranslation();
   const [theme, setTheme] = useTheme();
 
   const [visibleSections, setVisibleSections] = useState({

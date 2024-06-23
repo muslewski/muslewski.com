@@ -1,3 +1,6 @@
+import { useTranslation } from "react-i18next";
+import { savedLanguage } from "../../helpers/i18n";
+
 import logo from "../../assets/Logo.svg";
 import logoDark from "../../assets/logoDark.svg";
 import hamburger from "../../assets/Hamburger.svg";
@@ -15,13 +18,15 @@ import graduation from "../../assets/graduation.svg";
 import graduationDark from "../../assets/graduationDark.svg";
 import translation from "../../assets/translation.svg";
 import translationDark from "../../assets/translationDark.svg";
-import moon from "../../assets/Moon.svg";
+import moon from "../../assets/moon.svg";
 import sun from "../../assets/sun.svg";
 import buttonArrow from "../../assets/buttonArrow.svg";
 import { useState, useEffect, useRef } from "react";
 import AnimatedHr from "./AnimatedHr";
 
 function Menu({ setTheme, theme, hrLeft = "" }) {
+  const [language, setLanguage] = useState(savedLanguage);
+  const { t, i18n } = useTranslation();
   const [openSettings, setOpenSettings] = useState(null);
   const openSettingsRef = useRef();
 
@@ -104,6 +109,12 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
   // Ref for setting button
   const refSettings = useOutsideClick(handleClickOutside);
 
+  function changeLanguage(lng) {
+    setLanguage(lng);
+    i18n.changeLanguage(lng);
+    localStorage.setItem("language", lng); // Zapisz wybór języka
+  }
+
   return (
     <menu className=" flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl fixed w-9/12 lg:w-10/12 z-40">
       <li className="animate-fade-down animate-duration-500 dark:bg-background/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent p-3 rounded-2xl">
@@ -119,21 +130,21 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
           icon={theme === "dark" ? puzzleDark : puzzle}
           className="animate-delay-[50ms]"
         >
-          Projekty
+          {t("Projects")}
         </MenuItem>
         <MenuItem
           href="#technologie"
           icon={theme === "dark" ? toolDark : tool}
           className="animate-delay-[100ms]"
         >
-          Technologie
+          {t("Tools")}
         </MenuItem>
         <MenuItem
           href="#edukacja"
           icon={theme === "dark" ? graduationDark : graduation}
           className="animate-delay-[150ms]"
         >
-          Edukacja
+          {t("Education")}
         </MenuItem>
         <li className="relative" onClick={handleMenuClick}>
           <img
@@ -148,20 +159,21 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
            bg-white dark:bg-secondary-dark px-12 py-3 rounded-2xl shadow-md shadow-secondary/10 2xl:animate-jump xl:animate-duration-500 xl:animate-ease-in-out  ${animationClass}`}
           >
             <MenuItem
-              icon={theme === "dark" ? moon : sun}
+              icon={theme === "dark" ? sun : moon}
               className="2xl:animate-delay-[200ms]"
               onClick={() => {
                 setTheme(theme === "dark" ? "light" : "dark");
               }}
             >
-              {theme === "dark" ? "Ciemny" : "Jasny"}
+              {theme === "dark" ? t("Bright") : t("Dark")}
               {/* <img src={buttonArrow} className="h-2" alt="" /> */}
             </MenuItem>
             <MenuItem
               icon={theme === "dark" ? translationDark : translation}
               className="2xl:animate-delay-[250ms]"
+              onClick={() => changeLanguage(language === "pl" ? "en" : "pl")}
             >
-              PL
+              {t("TranslationButton")}
               {/* <img src={buttonArrow} className="h-2" alt="" /> */}
             </MenuItem>
           </ul>
@@ -171,9 +183,9 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
         href="#kontakt"
         icon={hire}
         className="animate-delay-[300ms] hidden lg:flex text-2xl lg:text-white lg:bg-gradient-to-bl lg:from-secondary lg:to-[#273aa5] rounded-md"
-        classNameA="px-4 py-1 hover:py-2 hover:px-5"
+        classNameA="px-4 py-1 hover:py-2 hover:px-5  text-nowrap"
       >
-        Zatrudnij
+        {t("Hire")}
       </MenuItem>
       <MenuItem
         className="flex lg:hidden dark:bg-background/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent py-6 px-4 rounded-2xl "

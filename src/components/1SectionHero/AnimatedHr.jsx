@@ -21,7 +21,7 @@ function AnimatedHr({ hrLeft }) {
     };
   }, [hrLeft]);
 
-  console.log(hrClass);
+  // console.log(hrClass);
 
   return <hr key={hrClass} className={hrClass} />;
 }

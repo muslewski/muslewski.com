@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React from "react";
 import Section from "../Shared/Section";
 import Subtitle from "../Shared/Subtitle";
@@ -11,22 +12,20 @@ import { useRef, forwardRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
 
 const Education = forwardRef(function Education(props, refEducation) {
+  const { t, i18n } = useTranslation();
   const ref = useRef();
   const isVisible = useIsVisible(ref, true);
   return (
     <Section id="edukacja" className="pt-40 lg:pt-60 max-w-7xl">
       <div ref={refEducation} className="self-start w-full flex flex-col">
-        <Subtitle>Edukacja</Subtitle>
+        <Subtitle>{t("Education")}</Subtitle>
         <GradientLine />
 
         {/* <Brief>
         Dyplom? Fajnie, ale co dalej? Moja prawdziwa edukacja to ciągła nauka i
         zdobywanie doświadczenia w realnych projektach.
       </Brief> */}
-        <Brief>
-          Moja przygoda edukacyjna ciągle trwa, obejmuje szkołę średnią i
-          planowaną uczelnię.
-        </Brief>
+        <Brief>{t("MyAdventure")}</Brief>
         <div className="mt-20 self-start h-56 flex flex-col  justify-start gap-16 text-xl font-description relative">
           <div
             ref={ref}
@@ -36,11 +35,8 @@ const Education = forwardRef(function Education(props, refEducation) {
           >
             <img className="h-full w-full" src={verticalLine} alt="" />
           </div>
-          <EducationObject
-            year="2024"
-            achievment="Międzynarodowe Liceum Sokrates"
-          />
-          <EducationObject year="2025" achievment="Politechnika Bydgoska" />
+          <EducationObject year="2024" achievment={t("Sokrates")} />
+          <EducationObject year="2025" achievment={t("Politechnika")} />
         </div>
       </div>
     </Section>

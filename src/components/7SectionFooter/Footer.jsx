@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Section from "../Shared/Section";
 import behance from "../../assets/behance.svg";
 import linkedin from "../../assets/linkedin.svg";
@@ -7,6 +8,7 @@ import LinkCard from "./LinkCard";
 import GradientLine from "../Shared/GradientLine";
 
 function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <Section className="pt-32 lg:pt-52 justify-start max-w-7xl">
       <footer className="flex flex-col w-full font-description text-secondary dark:text-white text-xl lg:text-2xl text-center font-medium">
@@ -14,7 +16,7 @@ function Footer() {
           <li>
             <a href="mailto:mateusz.mus@pm.me">
               <span className="border-b-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
-                Email
+                {t("Email")}
               </span>
               <span className="underline underline-offset-2">
                 mateusz.mus@pm.me
@@ -24,9 +26,11 @@ function Footer() {
           <li>
             <a href="#">
               <span className="border-b-2 p-2 mr-5 rounded-md border-secondary/25 shadow-secondary/10 shadow-md">
-                Życiorys zawodowy
+                {t("Resume")}
               </span>
-              <span className="underline underline-offset-2">CV</span>
+              <span className="underline underline-offset-2">
+                {t("Download")}
+              </span>
             </a>
           </li>
         </ul>

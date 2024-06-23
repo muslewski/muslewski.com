@@ -1,9 +1,11 @@
+import { useTranslation } from "react-i18next";
 import React, { useState, useEffect, forwardRef } from "react";
 import { useRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
 
 const Input = forwardRef(
   ({ name, title, textarea, inputType, errorText, send }, ref) => {
+    const { t, i18n } = useTranslation();
     const [value, setValue] = useState("");
     const refVisibility = useRef();
     const isVisible = useIsVisible(refVisibility, true);
@@ -53,7 +55,7 @@ const Input = forwardRef(
 
         {errorText.length > 0 && (
           <span className="font-description text-xl font-medium text-blue-900 dark:text-blue-100">
-            {errorText}
+            {t(errorText)}
           </span>
         )}
       </label>

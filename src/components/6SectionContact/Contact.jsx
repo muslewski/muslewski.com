@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import EmailValidator from "email-validator";
@@ -13,6 +14,8 @@ import Input from "./Input";
 import Button from "../Shared/Button";
 
 function Contact() {
+  const { t, i18n } = useTranslation();
+
   // State for sending status
   const [isSend, setIsSend] = useState(false);
   // State for disabling the button before we find out if the message was sent
@@ -45,28 +48,24 @@ function Contact() {
 
     if (name.length < 1) {
       // If there is no name
-      setNameError("Jak mogę się do Ciebie zwracać?");
+      setNameError("FormError1");
       nameRef.current.focus();
     } else if (email.length < 1) {
       // If there is no email
-      setEmailError("Spokojnie, nie wyspamuję Cię. Wpisz swój email.");
+      setEmailError("FormError2");
       emailRef.current.focus();
     } else if (!email.includes("@")) {
       // If email don't have @
       emailRef.current.focus();
-      setEmailError(
-        "Hmmm, ten adres email wygląda dziwnie. Może spróbuj jeszcze raz z '@'?"
-      );
+      setEmailError("FormError3");
     } else if (!EmailValidator.validate(email)) {
       // If email is valid
       emailRef.current.focus();
-      setEmailError("Czy na pewno wpisałeś/aś prawidłowy adres email?");
+      setEmailError("FormError4");
     } else if (message.length < 1) {
       // If there is no message
       messageRef.current.focus();
-      setMessageError(
-        "Napisz wiadomość, abyśmy mogli rozpocząć owocną współpracę."
-      );
+      setMessageError("FormError5");
     } else {
       setButtonClicked(true);
 
@@ -115,13 +114,10 @@ function Contact() {
       <div className="self-start mb-10 w-48 h-40 lg:w-80 lg:h-72">
         <Lottie options={contactAnimation} />
       </div>
-      <Subtitle>Zapraszam do kontaktu!</Subtitle>
+      <Subtitle>{t("InviteToContact")}</Subtitle>
       <GradientLine />
 
-      <Brief>
-        Jeśli masz pytania, chcesz omówić projekt lub nawiązać współpracę, bez
-        wahania wypełnij poniższy formularz.
-      </Brief>
+      <Brief>{t("IfQuestions")}</Brief>
 
       <form
         ref={form}
@@ -131,14 +127,14 @@ function Contact() {
         <Input
           ref={nameRef}
           name="user_name"
-          title="Imię"
+          title={t("Name")}
           send={isSend}
           errorText={nameError}
         />
         <Input
           ref={emailRef}
           name="user_email"
-          title="Email"
+          title={t("Email")}
           inputType="email"
           send={isSend}
           errorText={emailError}
@@ -146,7 +142,7 @@ function Contact() {
         <Input
           ref={messageRef}
           name="message"
-          title="Wiadomość"
+          title={t("Message")}
           send={isSend}
           errorText={messageError}
           textarea
@@ -158,7 +154,7 @@ function Contact() {
               : "hover:scale-105 transition-transform"
           }
         >
-          Wyślij
+          {buttonClicked ? t("Sent") : t("Send")}
         </Button>
         {isSend && (
           <div className="fixed z-40 top-10 right-1/2 translate-x-1/2 pointer-events-none w-80 lg:w-1/4 lg:top-1/4 lg:right-1/4">
