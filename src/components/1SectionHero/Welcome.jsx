@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import fota from "../../assets/fota.png";
+import fota from "../../assets/fotaLower.png";
 import fotaBefore from "../../assets/fotaBefore.svg";
 import fotaBeforeDark from "../../assets/fotaBeforeDark.svg";
 import fotaRaw from "../../assets/fota_raw.jpg";
