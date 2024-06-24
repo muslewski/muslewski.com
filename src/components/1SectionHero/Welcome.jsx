@@ -27,7 +27,7 @@ function WelcomeSection({ setTheme, theme, hrLeft }) {
             src={theme === "dark" ? fotaDark : fota}
             alt=""
           />
-          <Photo3d fota={theme === "dark" ? fotaDark : fota} />
+          <Photo3d fota={theme === "dark" ? fota : fota} />
           <img
             className=" hidden lg:flex absolute h-3/4 w-3/4 -bottom-10 xl:-bottom-16 right-0 z-0"
             src={theme === "dark" ? fotaBeforeDark : fotaBefore}
