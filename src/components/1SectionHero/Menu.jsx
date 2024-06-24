@@ -39,7 +39,8 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
 
   // By default animation is hidden
   const [animationClass, setAnimationClass] = useState("xl:hidden 2xl:flex");
-  const [menuAnimationClass, setMenuAnimationClass] = useState("hidden");
+  const [menuAnimationClass, setMenuAnimationClass] =
+    useState("hidden xl:flex");
 
   // Logic for animation of settings (Jump in / out)
   useEffect(() => {
