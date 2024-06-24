@@ -24,8 +24,8 @@ function ToolCard({ title, logo, level, col1, col2, className }) {
     <li
       ref={ref}
       className={`p-5 w-32 h-36 flex flex-col gap-2 justify-center items-center border-4 shadow-xl rounded-2xl 
-        animate-ease-in-out animate-duration-[1600ms] opacity-0  ${className} ${
-        isVisible ? "animate-fade-up" : ""
+        animate-ease-in-out animate-duration-[1600ms] transition-opacity animate-fill-both   ${className} ${
+        isVisible ? "animate-fade-up hover:animate-fade-down" : "opacity-0"
       } ${className}`}
       style={{ borderColor: col2 }}
     >

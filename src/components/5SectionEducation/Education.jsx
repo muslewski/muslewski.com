@@ -36,7 +36,11 @@ const Education = forwardRef(function Education(props, refEducation) {
             <img className="h-full w-full" src={verticalLine} alt="" />
           </div>
           <EducationObject year="2024" achievment={t("Sokrates")} />
-          <EducationObject year="2025" achievment={t("Politechnika")} />
+          <EducationObject
+            year="2025"
+            achievment={t("Politechnika")}
+            className="blur-2xl hover:blur-0 transition-all"
+          />
         </div>
       </div>
     </Section>

@@ -2,11 +2,13 @@ import React from "react";
 import { useRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
 
-function EducationObject({ children, year, achievment }) {
+function EducationObject({ children, year, achievment, className }) {
   const ref = useRef();
   const isVisible = useIsVisible(ref, true);
   return (
-    <div className="flex justify-center items-center gap-6 w-full ">
+    <div
+      className={`flex justify-center items-center gap-6 w-full ${className}`}
+    >
       <h4
         ref={ref}
         className={`font-title font-medium text-2xl lg:text-4xl dark:text-slate-50 animate-duration-[3000ms] animate-ease-out ${
