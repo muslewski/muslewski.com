@@ -62,7 +62,11 @@ function Photo3d({ fota }) {
         onMouseMove={rotateToMouse}
         // style={{ backgroundImage: `url(${fota})` }}
       >
-        <img src={fota} className="w-full h-full cardImage" alt="" />
+        <img
+          src={fota}
+          className="w-full h-full cardImage object-contain"
+          alt=""
+        />
         {/* <div ref={glowRef} className="glow" /> */}
       </div>
     </div>

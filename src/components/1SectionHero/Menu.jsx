@@ -29,12 +29,17 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
   const { t, i18n } = useTranslation();
   const [openSettings, setOpenSettings] = useState(null);
   const openSettingsRef = useRef();
+  const openMenuRef = useRef();
+
+  const [openMenu, setOpenMenu] = useState(null);
 
   // Latest status of openSettings.
   openSettingsRef.current = openSettings;
+  openMenuRef.current = openMenu;
 
   // By default animation is hidden
   const [animationClass, setAnimationClass] = useState("xl:hidden 2xl:flex");
+  const [menuAnimationClass, setMenuAnimationClass] = useState("hidden");
 
   // Logic for animation of settings (Jump in / out)
   useEffect(() => {
@@ -57,6 +62,28 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
       }
     };
   }, [openSettings]);
+
+  // Logic for animation of menu (Jump in / out)
+  useEffect(() => {
+    let timeout;
+
+    if (openMenu === true) {
+      setMenuAnimationClass("animate-jump-in xl:flex");
+    } else if (openMenu === false) {
+      setMenuAnimationClass("animate-jump-out xl:flex");
+      // Make sure that we will not see jump out animation after it is already disabled
+      timeout = setTimeout(() => {
+        setMenuAnimationClass("hidden xl:flex");
+      }, 1000);
+    }
+
+    // Clear timeout
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
+  }, [openMenu]);
 
   // Logic of hiding settings in multiple ways
   const useOutsideClick = (callback) => {
@@ -98,7 +125,16 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
 
   // Hide settings if visible
   const handleClickOutside = () => {
-    if (openSettingsRef.current === true) setOpenSettings(false);
+    if (openSettingsRef.current === true) {
+      setOpenSettings(false);
+    }
+  };
+
+  // Hide menu if visible
+  const handleMenuClickOutside = () => {
+    if (openMenuRef.current === true) {
+      setOpenMenu(false);
+    }
   };
 
   // Do nothing when clicked on children elements
@@ -108,6 +144,7 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
 
   // Ref for setting button
   const refSettings = useOutsideClick(handleClickOutside);
+  const refMenu = useOutsideClick(handleMenuClickOutside);
 
   function changeLanguage(lng) {
     setLanguage(lng);
@@ -116,13 +153,16 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
   }
 
   return (
-    <menu className=" flex justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl fixed w-9/12 lg:w-10/12 z-40">
-      <li className="animate-fade-down animate-duration-500 dark:bg-background/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent p-3 rounded-2xl">
+    <menu className=" flex flex-wrap xl:flex-nowrap justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl fixed w-9/12 lg:w-10/12 z-40">
+      <li className="dark:bg-black/25 px-4 py-3 bg-white/25 xl:bg-transparent xl:dark:bg-transparent rounded-2xl hover:animate-jump animate-duration-500 animate-ease-in-out">
         <a href="#">
           <img src={theme === "dark" ? logoDark : logo} alt="" />
         </a>
       </li>
-      <ul className="relative hidden xl:flex gap-20 bg-white/90 dark:bg-secondary-dark/90 lg:py-3 lg:px-7 mx-6 lg:rounded-2xl shadow-md shadow-secondary/5">
+
+      <ul
+        className={`${menuAnimationClass} flex absolute xl:relative  sm:justify-center self-center   justify-start items-start  flex-col sm:flex-row z-30 top-24 right-0 w-fit xl:top-0 flex-wrap xl:flex-nowrap gap-y-8 sm:gap-20 bg-white/90 dark:bg-secondary-dark/90 lg:py-3 py-12 sm:py-6 px-14 sm:px-7 mx-6 rounded-2xl shadow-md shadow-secondary/5`}
+      >
         <AnimatedHr hrLeft={hrLeft} />
 
         <MenuItem
@@ -146,21 +186,24 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
         >
           {t("Education")}
         </MenuItem>
-        <li className="relative" onClick={handleMenuClick}>
+        <li
+          className="relative animate-fade-down animate-duration-500 "
+          onClick={handleMenuClick}
+        >
           <img
             src={theme === "dark" ? settingsIconDark : settingsIcon}
-            className="h-11 2xl:hidden cursor-pointer"
+            className="h-11 hidden xl:flex 2xl:hidden cursor-pointer xl:animate-delay-[1000ms]"
             alt=""
             onClick={() => setOpenSettings((prev) => !prev)}
             ref={refSettings}
           />
           <ul
-            className={`absolute 2xl:static flex justify-between gap-24 2xl:gap-20 2xl:p-0 2xl:shadow-transparent 2xl:bg-transparent 2xl:dark:bg-transparent -bottom-24 right-0
-           bg-white dark:bg-secondary-dark px-12 py-3 rounded-2xl shadow-md shadow-secondary/10 2xl:animate-jump xl:animate-duration-500 xl:animate-ease-in-out  ${animationClass}`}
+            className={`static xl:absolute 2xl:static flex-col sm:flex-row flex justify-between items-start gap-y-8 sm:gap-20 xl:gap-24 2xl:gap-20 p-0 2xl:p-0 2xl:shadow-transparent 2xl:bg-transparent 2xl:dark:bg-transparent -bottom-24 right-0
+          xl:bg-white xl:dark:bg-secondary-dark xl:px-12 xl:py-3 rounded-2xl shadow-transparent xl:shadow-md xl:shadow-secondary/10 2xl:animate-jump  ${animationClass}`}
           >
             <MenuItem
               icon={theme === "dark" ? sun : moon}
-              className="2xl:animate-delay-[200ms]"
+              className="xl:animate-delay-[200ms]"
               onClick={() => {
                 setTheme(theme === "dark" ? "light" : "dark");
               }}
@@ -170,7 +213,7 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
             </MenuItem>
             <MenuItem
               icon={theme === "dark" ? translationDark : translation}
-              className="2xl:animate-delay-[250ms]"
+              className="xl:animate-delay-[250ms]"
               onClick={() => changeLanguage(language === "pl" ? "en" : "pl")}
             >
               {t("TranslationButton")}
@@ -179,23 +222,27 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
           </ul>
         </li>
       </ul>
-      <MenuItem
-        href="#kontakt"
-        icon={hire}
-        className="animate-delay-[300ms] hidden lg:flex text-2xl lg:text-white lg:bg-gradient-to-bl lg:from-secondary lg:to-[#273aa5] rounded-md"
-        classNameA="px-4 py-1 hover:py-2 hover:px-5  text-nowrap"
-      >
-        {t("Hire")}
-      </MenuItem>
-      <MenuItem
-        className="flex lg:hidden dark:bg-background/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent py-6 px-4 rounded-2xl "
-        onClick={() => {
-          console.log("click");
-        }}
-      >
-        {" "}
-        <img src={theme === "dark" ? hamburgerDark : hamburger} alt="" />
-      </MenuItem>
+      <ul className="flex flex-row-reverse items-center gap-12">
+        <MenuItem
+          href="#kontakt"
+          icon={hire}
+          className="animate-delay-[300ms] hidden lg:flex text-2xl lg:text-white lg:bg-gradient-to-bl lg:from-secondary lg:to-[#273aa5] rounded-md hover:shadow-accent/30 hover:shadow-xl transition ease-in-out duration-500"
+          classNameA="px-4 py-1 hover:py-2 hover:px-5  text-nowrap"
+        >
+          {t("Hire")}
+        </MenuItem>
+        <div ref={refMenu}>
+          <MenuItem
+            className="flex xl:hidden dark:bg-black/25 bg-white/25 xl:bg-transparent xl:dark:bg-transparent py-4 px-4 rounded-2xl hover:animate-jump animate-duration-500 animate-ease-in-out"
+            onClick={() => {
+              setOpenMenu((prev) => !prev);
+            }}
+          >
+            {" "}
+            <img src={theme === "dark" ? hamburgerDark : hamburger} alt="" />
+          </MenuItem>
+        </div>
+      </ul>
     </menu>
   );
 }

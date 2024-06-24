@@ -54,8 +54,8 @@ function App() {
 
   const hrPositions = {
     Projects: "opacity-100 w-52 left-[0.4rem] animate-jump-in",
-    Tools: "opacity-100 w-52 left-[14.5rem] animate-jump-in",
-    Education: "opacity-100 w-52 left-[30rem] animate-jump-in",
+    Tools: "opacity-100 w-52 left-[13rem] animate-jump-in",
+    Education: "opacity-100 w-52 left-[26rem] animate-jump-in",
   };
 
   const hrLeft = useMemo(() => {

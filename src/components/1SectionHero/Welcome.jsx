@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import fota from "../../assets/fotaLower.png";
+import fotaDark from "../../assets/fotaLowerDark.png";
 import fotaBefore from "../../assets/fotaBefore.svg";
 import fotaBeforeDark from "../../assets/fotaBeforeDark.svg";
 import fotaRaw from "../../assets/fota_raw.jpg";
@@ -23,10 +24,10 @@ function WelcomeSection({ setTheme, theme, hrLeft }) {
         <div className="h-80 lg:pr-16 lg:pb-16 lg:h-3/5 relative flex justify-center ">
           <img
             className="h-full relative z-20 object-contain xl:hidden"
-            src={fota}
+            src={theme === "dark" ? fotaDark : fota}
             alt=""
           />
-          <Photo3d fota={fota} />
+          <Photo3d fota={theme === "dark" ? fotaDark : fota} />
           <img
             className=" hidden lg:flex absolute h-3/4 w-3/4 -bottom-10 xl:-bottom-16 right-0 z-0"
             src={theme === "dark" ? fotaBeforeDark : fotaBefore}
