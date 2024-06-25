@@ -154,7 +154,7 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
   }
 
   return (
-    <menu className=" flex flex-wrap xl:flex-nowrap justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold md:text-lg xl:text-2xl fixed w-9/12 lg:w-10/12 z-40">
+    <menu className=" flex flex-wrap xl:flex-nowrap justify-between mt-10 xl:mt-14 items-center mb-4 lg:mb-32  font-description text-secondary dark:text-white tracking-wide font-bold text-2xl fixed w-9/12 lg:w-10/12 z-40">
       <li className="dark:bg-black/25 px-4 py-3 bg-white/25 xl:bg-transparent xl:dark:bg-transparent rounded-2xl hover:animate-jump animate-duration-500 animate-ease-in-out">
         <a href="#">
           <img src={theme === "dark" ? logoDark : logo} alt="" />
@@ -162,7 +162,7 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
       </li>
 
       <ul
-        className={`${menuAnimationClass} flex absolute xl:relative  sm:justify-center self-center   justify-start items-start  flex-col sm:flex-row z-30 top-24 right-0 w-fit xl:top-0 flex-wrap xl:flex-nowrap gap-y-8 sm:gap-20 bg-white/90 dark:bg-secondary-dark/90 lg:py-3 py-12 sm:py-6 px-14 sm:px-7 mx-6 rounded-2xl shadow-md shadow-secondary/5`}
+        className={`${menuAnimationClass} flex absolute xl:relative sm:justify-center min-h-[50vh] sm:min-h-0  max-h-[80vh] self-center  justify-center gap-y-[3vh] items-start  flex-col sm:flex-row z-30 top-24 -right-3 w-full sm:w-fit xl:top-0 flex-wrap xl:flex-nowrap sm:gap-20 bg-white/90 dark:bg-secondary-dark/90 lg:py-3 py-6 px-14 sm:px-7 mx-6 rounded-2xl shadow-md shadow-secondary/5`}
       >
         <AnimatedHr hrLeft={hrLeft} />
 
@@ -199,7 +199,7 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
             ref={refSettings}
           />
           <ul
-            className={`static xl:absolute 2xl:static flex-col sm:flex-row flex justify-between items-start gap-y-8 sm:gap-20 xl:gap-24 2xl:gap-20 p-0 2xl:p-0 2xl:shadow-transparent 2xl:bg-transparent 2xl:dark:bg-transparent -bottom-24 right-0
+            className={`static xl:absolute 2xl:static flex-col sm:flex-row flex justify-between items-start gap-y-[3vh] sm:gap-20 xl:gap-24 2xl:gap-20 p-0 2xl:p-0 2xl:shadow-transparent 2xl:bg-transparent 2xl:dark:bg-transparent -bottom-24 right-0
           xl:bg-white xl:dark:bg-secondary-dark xl:px-12 xl:py-3 rounded-2xl shadow-transparent xl:shadow-md xl:shadow-secondary/10 2xl:animate-jump  ${animationClass}`}
           >
             <MenuItem
@@ -227,7 +227,7 @@ function Menu({ setTheme, theme, hrLeft = "" }) {
         <MenuItem
           href="#kontakt"
           icon={hire}
-          className="animate-delay-[300ms] hidden lg:flex text-2xl lg:text-white lg:bg-gradient-to-bl lg:from-secondary lg:to-[#273aa5] rounded-md hover:shadow-accent/30 hover:shadow-xl transition ease-in-out duration-500"
+          className={`animate-delay-[400ms] animate-fade-left fixed ${openMenu ? "" : "hidden"} bottom-10 md:static lg:flex text-2xl text-white bg-gradient-to-bl from-secondary to-[#273aa5] rounded-md hover:shadow-accent/30 hover:shadow-xl transition ease-in-out duration-500`}
           classNameA="px-4 py-1 hover:py-2 hover:px-5  text-nowrap"
         >
           {t("Hire")}

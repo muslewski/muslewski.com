@@ -24,7 +24,7 @@ function WelcomeSection({ setTheme, theme, hrLeft }) {
         <div className="h-80 lg:pr-16 lg:pb-16 lg:h-3/5 relative flex justify-center ">
           <img
             className="h-full relative z-20 object-contain xl:hidden"
-            src={theme === "dark" ? fotaDark : fota}
+            src={theme === "dark" ? fota : fota}
             alt=""
           />
           <Photo3d fota={theme === "dark" ? fota : fota} />
