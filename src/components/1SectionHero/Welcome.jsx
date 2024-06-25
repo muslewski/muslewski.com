@@ -21,7 +21,7 @@ function WelcomeSection({ setTheme, theme, hrLeft }) {
     <Section className="relative items-center max-w-7xl">
       <Menu setTheme={setTheme} theme={theme} hrLeft={hrLeft} />
       <div className="flex flex-col lg:flex-row-reverse lg:gap-12 justify-center pt-10 lg:pt-0 lg:px-12 2xl:px-0  2xl:justify-between w-full max-w-7xl items-center min-h-[90vh] lg:h-screen ">
-        <div className=" h-80 bg-black lg:pr-16 lg:pb-16 lg:h-4/5 xl:h-3/5 lg:self-end relative flex justify-center ">
+        <div className=" h-80 lg:pr-16 lg:pb-16 lg:h-4/5 xl:h-3/5 lg:self-end relative flex justify-center ">
           <img
             className="h-full relative z-20 object-contain xl:hidden"
             src={theme === "dark" ? fota : fota}
