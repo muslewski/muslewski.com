@@ -28,11 +28,11 @@ const Projects = forwardRef(function Projects(props, refProjects) {
   const ref1 = useRef();
   const isVisible1 = useIsVisible(ref1, true);
 
-  const ref2 = useRef();
-  const isVisible2 = useIsVisible(ref2, true);
+  // const ref2 = useRef();
+  // const isVisible2 = useIsVisible(ref2, true);
 
-  const ref3 = useRef();
-  const isVisible3 = useIsVisible(ref3, true);
+  // const ref3 = useRef();
+  // const isVisible3 = useIsVisible(ref3, true);
   return (
     <Section id="projekty" className="pt-40 lg:pt-60 max-w-7xl">
       <div ref={refProjects} className="self-start w-full flex flex-col">
@@ -65,7 +65,7 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             paragraph={t("PolMed")}
           />
 
-          <ProjectCard
+          {/* <ProjectCard
             className="mt-20"
             title="Kraina Psa"
             link="https://krainapsa.pl"
@@ -84,9 +84,9 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             dots={dotsGreen}
             thumbnail={kraina_psa}
             paragraph={t("KrainaPsa")}
-          />
+          /> */}
 
-          <ProjectCard
+          {/* <ProjectCard
             className="mt-20"
             title="VII Liceum Bydgoszcz"
             link="https://7lo.bydgoszcz.pl/"
@@ -105,7 +105,7 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             dots={dotsPink}
             thumbnail={school}
             paragraph={t("VIILiceum")}
-          />
+          /> */}
 
           <div className="mt-6">
             <Button
