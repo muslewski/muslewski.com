@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /admin/  # Jeśli masz katalog admin, który nie powinien być indeksowany
-Disallow: /private/  # Jeśli masz katalog prywatny, który nie powinien być indeksowany
+Disallow:
 
 Sitemap: https://muslewski.com/sitemap.xml
