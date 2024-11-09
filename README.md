@@ -22,7 +22,7 @@ Website here [Click](https://muslewski.com)
   https://rahuldkjain.github.io/gh-profile-readme-generator/
   https://www.youtube.com/watch?v=rCt9DatF63I&t=173s
   and remember to pin more projects
-- Custom email mateusz@muslewski.com
+- Add CSS Scroll Snap https://www.youtube.com/watch?v=ytl6TrroGis&ab_channel=WebDevSimplified
 - Custom scrollbar (even that it will not work on firefox)
 - Google Analytics to improve UX
 - Offline Mode
