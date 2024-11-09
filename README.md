@@ -30,7 +30,7 @@ Website here [Click](https://muslewski.com)
 - Audio Experience
 - Meme: terror on face when mobile version of website, shows horizontal scrolling.
 
-- Footer looks like trash. Make it look fancier.
+- Footer - Make it look fancier.
 - React Router for (Contact, Subpages of projects (so that even when livelink will not work, it will be possible to see what is it all about))
 - Good Switch buttons for languages and color themes
   destination_dir: muslewski
