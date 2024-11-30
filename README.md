@@ -28,6 +28,7 @@ Website here [Click](https://muslewski.com)
 - Offline Mode
 - Chat GPT Helper
 - Audio Experience
+- https://ui.aceternity.com/components/background-gradient-animation
 
 - Footer - Make it look fancier.
 - React Router for (Contact, Subpages of projects (so that even when livelink will not work, it will be possible to see what is it all about))
