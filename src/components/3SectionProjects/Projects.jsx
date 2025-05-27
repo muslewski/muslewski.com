@@ -6,7 +6,8 @@ import car from "../../assets/car.png";
 import dog from "../../assets/dog.png";
 import kraina_psa from "../../assets/kraina-psa.png";
 import liceum7 from "../../assets/7lo.png";
-import school from "../../assets/school.png";
+import biofloor from "../../assets/biofloor.png";
+import hen from "../../assets/hen.png";
 import github from "../../assets/github-sign.png";
 import dotsGreen from "../../assets/dotsGreen.svg";
 import dotsBlue from "../../assets/dotsBlue.svg";
@@ -31,8 +32,8 @@ const Projects = forwardRef(function Projects(props, refProjects) {
   // const ref2 = useRef();
   // const isVisible2 = useIsVisible(ref2, true);
 
-  // const ref3 = useRef();
-  // const isVisible3 = useIsVisible(ref3, true);
+  const ref3 = useRef();
+  const isVisible3 = useIsVisible(ref3, true);
   return (
     <Section id="projekty" className="pt-40 lg:pt-60 max-w-7xl">
       <div ref={refProjects} className="self-start w-full flex flex-col">
@@ -86,26 +87,26 @@ const Projects = forwardRef(function Projects(props, refProjects) {
             paragraph={t("KrainaPsa")}
           /> */}
 
-          {/* <ProjectCard
+          <ProjectCard
             className="mt-20"
-            title="VII Liceum Bydgoszcz"
-            link="https://7lo.bydgoszcz.pl/"
-            backgroundColor="#885b8b"
-            secondBackgroundColor="#5a3c5d"
+            title="Ściółka BioFloor"
+            link="https://biofloor.pl"
+            backgroundColor="#8b885b"
+            secondBackgroundColor="#5b5d3c"
             icon={
               <img
                 ref={ref3}
                 className={`w-28 absolute -top-16 right-2 rotate-6 z-10 animate-duration-[2000ms] animate-ease-in-out ${
                   isVisible3 ? "animate-fade-up" : ""
                 }`}
-                src={liceum7}
+                src={hen}
                 alt=""
               />
             }
-            dots={dotsPink}
-            thumbnail={school}
-            paragraph={t("VIILiceum")}
-          /> */}
+            dots={dotsGreen}
+            thumbnail={biofloor}
+            paragraph={t("BioFloor")}
+          />
 
           <div className="mt-6">
             <Button

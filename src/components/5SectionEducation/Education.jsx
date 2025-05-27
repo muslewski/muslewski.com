@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import React from "react";
 import Section from "../Shared/Section";
 import Subtitle from "../Shared/Subtitle";
 import GradientLine from "../Shared/GradientLine";
@@ -12,7 +11,7 @@ import { useRef, forwardRef } from "react";
 import { useIsVisible } from "../../helpers/useIsVisible";
 
 const Education = forwardRef(function Education(props, refEducation) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const ref = useRef();
   const isVisible = useIsVisible(ref, true);
   return (
@@ -39,7 +38,7 @@ const Education = forwardRef(function Education(props, refEducation) {
           <EducationObject
             year="2025"
             achievment={t("Politechnika")}
-            className="blur-2xl hover:blur-0 transition-all"
+            className="transition-all"
           />
         </div>
       </div>
